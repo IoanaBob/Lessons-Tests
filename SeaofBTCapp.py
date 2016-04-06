@@ -46,10 +46,6 @@ class SeaofBTCapp(tk.Tk):
 app = SeaofBTCapp()
 app.mainloop()
 
-        
 
-
-###############################
-# THE STUDENT FRAMES START HERE
 
 
