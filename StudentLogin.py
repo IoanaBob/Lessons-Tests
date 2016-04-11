@@ -1,5 +1,7 @@
 import tkinter as tk
 from MainStudentPage import *
+import tkinter.messagebox as tm
+
 
 LARGE_FONT= ("Verdana", 12)
 
@@ -11,23 +13,35 @@ class StudentLogin(tk.Frame):
         label.grid(row=0, column=1)
 
         # Adding the long in input fields
-        number = tk.Label(self, text="Student number:").grid(row=1)
-        password = tk.Label(self, text="Password:").grid(row=2)
+        self.number = tk.Label(self, text="Student number:").grid(row=1)
+        self.password = tk.Label(self, text="Password:").grid(row=2)
 
-        e1 = tk.Entry(self)
-        e2 = tk.Entry(self)
+        self.e1 = tk.Entry(self)
+        self.e2 = tk.Entry(self)
 
-        e1.grid(row=1, column=1)
-        e2.grid(row=2, column=1)
+        self.e1.grid(row=1, column=1)
+        self.e2.grid(row=2, column=1)
         ####################################
         # login button - goes to the lessons
-        log_in_button = tk.Button(self, text="Log in", command=lambda: controller.show_frame(MainStudentPage))
+        log_in_button = tk.Button(self, text="Log in", command=lambda: self.login())
         log_in_button.grid(row=3, column=1)
 
-
-
+     
         from StartPage import StartPage
 
         button1 = tk.Button(self, text="Back to Home", command=lambda: controller.show_frame(StartPage))
 
         button1.grid(row=3, column=0)
+        
+    def login(self):
+        username = self.e1.get()
+        password = self.e2.get() 
+
+
+        if username == "j" and password == "pass":            
+            # tm.showinfo("Login info")
+           self.MainStudentPage()
+
+        else:
+            tm.showerror("Login error", "Incorrect username or password")    
+    
