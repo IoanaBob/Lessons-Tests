@@ -11,6 +11,5 @@ class TakeTest2(tk.Frame):
 
         from MainStudentPage import MainStudentPage
         # back to home button - will be deleted when menu will exist
-        button2 = tk.Button(self, text="Home",
-                            command=lambda: controller.show_frame(MainStudentPage))
+        button2 = tk.Button(self, text="Home", command=lambda: controller.show_frame(MainStudentPage))
         button2.grid(row=3, column=1)

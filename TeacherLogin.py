@@ -2,6 +2,7 @@ import tkinter as tk
 
 
 LARGE_FONT= ("Verdana", 12)
+
 ###############################
 # THE TEACHER FRAMES START HERE
 # !!!TODO -  I WILL CONTINUE THAT LATER
@@ -14,7 +15,5 @@ class TeacherLogin(tk.Frame):
 
         from StartPage import StartPage
 
-        button1 = tk.Button(self, text="Back to Home",
-                            command=lambda: controller.show_frame(StartPage))
+        button1 = tk.Button(self, text="Back to Home", command=lambda: controller.show_frame(StartPage))
         button1.pack()
-

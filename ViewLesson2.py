@@ -17,14 +17,12 @@ class ViewLesson2(tk.Frame):
         text.insert(tk.END, "Fusce eget rhoncus justo. Pellentesque ut ipsum ac massa porta venenatis at malesuada orci. Suspendisse sollicitudin mollis aliquam. Sed nunc ligula, aliquet id massa et, tincidunt interdum lacus. Quisque at sodales eros, quis scelerisque nisl. Integer a justo nec justo ullamcorper tincidunt. Mauris eu enim aliquam sapien mollis vestibulum in at massa.")
         text.config(state=tk.DISABLED)
         text.grid(row=1)
-        
+
         # Go to take test
-        button1 = tk.Button(self, text="Take test",
-                            command=lambda: controller.show_frame(TakeTest2))
+        button1 = tk.Button(self, text="Take test", command=lambda: controller.show_frame(TakeTest2))
         button1.grid(row=2)
 
         from MainStudentPage import MainStudentPage
         # back to lessons
-        button2 = tk.Button(self, text="Back to Lessons",
-                            command=lambda: controller.show_frame(MainStudentPage))
+        button2 = tk.Button(self, text="Back to Lessons", command=lambda: controller.show_frame(MainStudentPage))
         button2.grid(row=3)

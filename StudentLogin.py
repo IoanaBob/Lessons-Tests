@@ -8,7 +8,7 @@ class StudentLogin(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         label = tk.Label(self, text="Log In!", font=LARGE_FONT)
-        label.grid(row=0)
+        label.grid(row=0, column=1)
 
         # Adding the long in input fields
         number = tk.Label(self, text="Student number:").grid(row=1)
@@ -21,12 +21,13 @@ class StudentLogin(tk.Frame):
         e2.grid(row=2, column=1)
         ####################################
         # login button - goes to the lessons
-        button1 = tk.Button(self, text="Log in",
-                            command=lambda: controller.show_frame(MainStudentPage))
-        button1.grid(row=3, column=1)
+        log_in_button = tk.Button(self, text="Log in", command=lambda: controller.show_frame(MainStudentPage))
+        log_in_button.grid(row=3, column=1)
+
+
 
         from StartPage import StartPage
-        # back to home button - will be deleted when menu will exist
-        button2 = tk.Button(self, text="Back to Home",
-                            command=lambda: controller.show_frame(StartPage))
-        button2.grid(row=3, column=0)
+
+        button1 = tk.Button(self, text="Back to Home", command=lambda: controller.show_frame(StartPage))
+
+        button1.grid(row=3, column=0)

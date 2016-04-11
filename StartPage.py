@@ -12,13 +12,8 @@ class StartPage(tk.Frame):
         label = tk.Label(self, text="Start Page", font=LARGE_FONT)
         label.pack(pady=10,padx=10)
 
-        button = tk.Button(self, text="I am a Student",
-                            command=lambda: controller.show_frame(StudentLogin))
+        button = tk.Button(self, text="I am a Student", command=lambda: controller.show_frame(StudentLogin))
         button.pack()
 
-        button2 = tk.Button(self, text="I am a Professor",
-                            command=lambda: controller.show_frame(TeacherLogin))
+        button2 = tk.Button(self, text="I am a Professor", command=lambda: controller.show_frame(TeacherLogin))
         button2.pack()
-
-
-
