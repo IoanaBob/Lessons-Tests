@@ -7,7 +7,7 @@ LARGE_FONT= ("Verdana", 12)
 class SeaofBTCapp(tk.Tk):
 
     def __init__(self, *args, **kwargs):
-        
+
         tk.Tk.__init__(self, *args, **kwargs)
         container = tk.Frame(self)
 
@@ -33,7 +33,7 @@ class SeaofBTCapp(tk.Tk):
         frame = self.frames[cont]
         frame.tkraise()
 
-        
+
 class StartPage(tk.Frame):
 
     def __init__(self, parent, controller):
@@ -115,7 +115,7 @@ class ViewLesson1(tk.Frame):
         text.insert(tk.END, "Fusce eget rhoncus justo. Pellentesque ut ipsum ac massa porta venenatis at malesuada orci. Suspendisse sollicitudin mollis aliquam. Sed nunc ligula, aliquet id massa et, tincidunt interdum lacus. Quisque at sodales eros, quis scelerisque nisl. Integer a justo nec justo ullamcorper tincidunt. Mauris eu enim aliquam sapien mollis vestibulum in at massa.")
         text.config(state=tk.DISABLED)
         text.grid(row=1)
-        
+
         # Go to take test
         button1 = tk.Button(self, text="Take test",
                             command=lambda: controller.show_frame(TakeTest1))
@@ -141,7 +141,7 @@ class ViewLesson2(tk.Frame):
         text.insert(tk.END, "Fusce eget rhoncus justo. Pellentesque ut ipsum ac massa porta venenatis at malesuada orci. Suspendisse sollicitudin mollis aliquam. Sed nunc ligula, aliquet id massa et, tincidunt interdum lacus. Quisque at sodales eros, quis scelerisque nisl. Integer a justo nec justo ullamcorper tincidunt. Mauris eu enim aliquam sapien mollis vestibulum in at massa.")
         text.config(state=tk.DISABLED)
         text.grid(row=1)
-        
+
         # Go to take test
         button1 = tk.Button(self, text="Take test",
                             command=lambda: controller.show_frame(TakeTest2))
