@@ -1,6 +1,7 @@
 import tkinter as tk
 from MainStudentPage import *
 import tkinter.messagebox as tm
+import json
 
 
 LARGE_FONT= ("Verdana", 12)
@@ -38,10 +39,16 @@ class StudentLogin(tk.Frame):
         password = self.e2.get() 
 
 
-        if username == "j" and password == "pass":            
-            # tm.showinfo("Login info")
-           self.MainStudentPage()
+        my_data = json.loads(open("users.json").read())
+        for key, value in my_data.items():
+            for i in value:
+                for key1, value1 in i.items():
+                        
+                    if username == key1 and password == value1:            
+                        tm.showinfo("Login info", "HI")
+                        # self.MainStudentPage()
+                        return
 
-        else:
-            tm.showerror("Login error", "Incorrect username or password")    
-    
+                    else:
+                        tm.showerror("Login error", "Incorrect username or password")    
+                        return
