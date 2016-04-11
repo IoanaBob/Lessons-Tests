@@ -98,7 +98,7 @@ class MainStudentPage(tk.Frame):
         # back to home button - will be deleted when menu will exist - also you cant go back if logged in
         button3 = tk.Button(self, text="Back to Home",
                             command=lambda: controller.show_frame(StartPage))
-        button2.grid(row=3, column=1)
+        button3.grid(row=3, column=1)
 
 class ViewLesson1(tk.Frame):
 
