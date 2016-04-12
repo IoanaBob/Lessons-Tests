@@ -5,10 +5,10 @@
   	"Question Content" :
   		[
           {"Question":"red?", "Correct Answer":"1/2", "Answers": ["1/2", "1/3", "1/4", "22/52", "1/8", "2/16", "4/16", "1/6", "1"]},
-          {"Question":"either a heart or club?", "Correct_answer":"1/2", "Answers": ["1/2","1/3", "1/4", "22/52", "1/8"]},
-          {"Question":"either a 5 or 6?", "Correct_answer":"2/13", "Answers": ["1/2","1/4","1/6","1/8","2/16","12/52","6/26","3/13"]},
-          {"Question":"not a red Ace?", "Correct_answer":"25/26", "Answers": ["20/52","1/2","1/4","1/6","51/52","15/32","2/52","1/26"]},
-          {"Question":"not red or not an Ace?", "Correct_answer":"25/26", "Answers": ["20/52","1/2","1/4","1/6","51/52","15/32","2/52","1/26"]},
+          {"Question":"either a heart or club?", "Correct Answer":"1/2", "Answers": ["1/2","1/3", "1/4", "22/52", "1/8"]},
+          {"Question":"either a 5 or 6?", "Correct Answer":"2/13", "Answers": ["1/2","1/4","1/6","1/8","2/16","12/52","6/26","3/13"]},
+          {"Question":"not a red Ace?", "Correct Answer":"25/26", "Answers": ["20/52","1/2","1/4","1/6","51/52","15/32","2/52","1/26"]},
+          {"Question":"not red or not an Ace?", "Correct Answer":"25/26", "Answers": ["20/52","1/2","1/4","1/6","51/52","15/32","2/52","1/26"]},
       ]
   },
   {
@@ -17,8 +17,8 @@
   	"Question Content" :
   		[
           {"Question":"4 sixes occur?", "Correct Answer":"0.0008", "Answers": ["0.008","0.00016","0.08","0.01","0.0004","0.002"]},
-          {"Question":"at least 1 six occurs?", "Correct_answer":"0.52", "Answers": ["52","0.052","0.026","0.002","0.2","0.5"]},
-          {"Question":"four different numbers occur?", "Correct_answer":"0.28", "Answers": ["0.28","0.052","0.2","0.0052","0.0023","23"]}
+          {"Question":"at least 1 six occurs?", "Correct Answer":"0.52", "Answers": ["52","0.052","0.026","0.002","0.2","0.5"]},
+          {"Question":"four different numbers occur?", "Correct Answer":"0.28", "Answers": ["0.28","0.052","0.2","0.0052","0.0023","23"]}
       ]
   },
   {
