@@ -2,13 +2,48 @@
   {
   	"Question Topic":"Probability",
   	"Question Header":"A card is drawn from a set of 52. What is the probability that card is ",
-  	"Question Content" :
-  		[{"Question": "Red", "Answers": ["1/2", "1/3", "1/4", "22/52", "1/8", "2/16", "4/16", "1/6", "1"] },
+  	"Question Content":
+  		[{"Question": "Red", "Answers": ["1/2", "1/3", "1/4", "22/52"] },
+   		 {"Question": "Either a heart or club", "Answers": ["1/2","1/3", "1/4", "22/52"]},
+   		 {"Question": "The card is either a 5 or 6", "Answers": ["2/13", "1/2", "1/4", "1/6"]},
+   		 {"Question": "Not a red ace", "Answers":["25/26","20/52","1/2","1/4"]},
+   		 {"Question": "Not red or not an ace", "Answers":["25/26", "20/52", "1/2","2/52"]}]
+  },
+
+  {
+  	"Question Topic":"Probability",
+  	"Question Header":"A six sided dice is thrown 4 times, what is the probability that",
+  	"Question Content":
+  		[{"Question": "4 sixes occur", "Answers": ["0.0008", "0.008", "0.00016", "0.08"] },
+   		 {"Question": "Atleast 1 six occur", "Answers": ["0.52","0.052", "0.026", "0.002"]},
+   		 {"Question": "Four different numbers occur", "Answers": ["0.28", "0.028", "0.052", "28"]}]
+
+  },
+
+  {"Question Topic":"Probability",
+  	"Question Header":"What is the probability of",
+  	"Question Content":
+  		[{"Question": "Rolling atleast 3 from a standard dice", "Answers": ["4/6", "3/6", "1/2", "5/6"] }]
+  }, 
+
+  {"Question Topic":"Probability",
+  	"Question Header":"What is the probability of",
+  	"Question Content":
+  		[{"Question": "Rolling 2 sixes when one dice is rolled twice", "Answers": ["1/36", "2/36", "1/18", "1/23"] }]
+  },
+
+  {"Question Topic":"Probability",
+  	"Question Header":"A bag contains 4 red, 3 blue and 6 green balls, what is that",
+  	"Question Content":
+  		[{"Question": "Two balls are drawn without replacement and one is red and one is green", "Answers": ["4/11", "3/12", "4/12", "3/11"] },
+  		 {"Question": "Two balls are drawn with replacement and one is red and one is green", "Answers": ["1/3", "2/11", "3/12", "4/11"] },
+  		 {"Question": "Two balls are drawn without replacement and all 3 are red", "Answers": ["1/55", "7/55", "1/25", "1/6"] }]
+  },
 
 
-   		{"Question": "Either a heart or club", "Correct_answer":"1/2", "Answers": ["1/2","1/3", "1/4", "22/52", "1/8"] }
-      ]
-  }
-  ]
-}
+  {"Question Topic":"Probability",
+  	"Question Header":"A set of tickets numbered from 1 to 20 are mixed up and one is picked at random, what is the probabilty that",
+  	"Question Content":
+  		[{"Question": "the tickets are a multiple of 3 or 5", "Answers": ["9/20", "10/20", "8/20", "13/10"] }]
+  } 
 
