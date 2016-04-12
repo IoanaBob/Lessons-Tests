@@ -31,9 +31,9 @@ class TakeTest1(tk.Frame):
         menu6 = tk.Button(self, text="Log Out", command=lambda: controller.show_frame(StartPage))
         menu6.grid(row=0, column=5)
         #=====================================
-
-        with open('questions.json') as data_file:
-            questions_data = json.load(data_file)
+        # 
+        # with open('questions.json') as data_file:
+        #     questions_data = json.load(data_file)
 
 
         label = tk.Label(self, text="MUST BE FINISHED - MUST HAVE A LOOP GOING THROUGH QUESTIONS ", font=LARGE_FONT)
