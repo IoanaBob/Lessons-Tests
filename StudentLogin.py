@@ -18,7 +18,7 @@ class StudentLogin(tk.Frame):
         self.password = tk.Label(self, text="Password:").grid(row=2)
 
         self.e1 = tk.Entry(self)
-        self.e2 = tk.Entry(self)
+        self.e2 = tk.Entry(self, show="*")
 
         self.e1.grid(row=1, column=1)
         self.e2.grid(row=2, column=1)
