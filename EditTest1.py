@@ -1,18 +1,15 @@
 import tkinter as tk
-
 LARGE_FONT= ("Verdana", 12)
 
-class MainTeacherPage(tk.Frame):
+class EditTest1(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        
+
         # moved all the other page imports, makes it more clear and it works in any case.
         # add more here, too, if you need to.
         from EditLesson1 import EditLesson1
         from EditLesson2 import EditLesson2
-        from TakeTest1 import TakeTest1
-        from TakeTest2 import TakeTest2
         from EditTest1 import EditTest1
         from EditTest2 import EditTest2
         from Statistics import Statistics
@@ -34,16 +31,5 @@ class MainTeacherPage(tk.Frame):
         menu6.grid(row=0, column=5)
         #=====================================
 
-        label = tk.Label(self, text="Hello", font=LARGE_FONT)
+        label = tk.Label(self, text="MUST BE FINISHED - MUST HAVE A LOOP GOING THROUGH QUESTIONS ", font=LARGE_FONT)
         label.grid(row=1)
-        # Go to view lesson1
-        button1 = tk.Button(self, text="Edit Lesson 1", command=lambda: controller.show_frame(EditLesson1))
-        button1.grid(row=2, column=1)
-
-        # Go to view test1
-        button2 = tk.Button(self, text="Edit Lesson 2", command=lambda: controller.show_frame(EditLesson2))
-        button2.grid(row=3, column=1)
-
-        # back to home button - will be deleted when menu will exist - also you cant go back if logged in       button3 = tk.Button(self, text="Back to Home", command=lambda: controller.show_frame(StartPage))
-        button3 = tk.Button(self, text="Back to Home", command=lambda: controller.show_frame(StartPage))
-        button3.grid(row=4, column=1)

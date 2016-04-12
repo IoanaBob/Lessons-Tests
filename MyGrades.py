@@ -1,8 +1,7 @@
 import tkinter as tk
-
 LARGE_FONT= ("Verdana", 12)
 
-class TakeTest2(tk.Frame):
+class MyGrades(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
@@ -14,7 +13,6 @@ class TakeTest2(tk.Frame):
         from TakeTest1 import TakeTest1
         from TakeTest2 import TakeTest2
         from StartPage import StartPage
-        from MainStudentPage import MainStudentPage
         from MyGrades import MyGrades
         #=====================================
         # MENU STARTS HERE
@@ -33,9 +31,5 @@ class TakeTest2(tk.Frame):
         menu6.grid(row=0, column=5)
         #=====================================
 
-        label = tk.Label(self, text="MUST BE FINISHED - MUST HAVE A LOOP GOING THROUGH QUESTIONS ", font=LARGE_FONT)
+        label = tk.Label(self, text="MUST BE FINISHED", font=LARGE_FONT)
         label.grid(row=1)
-
-        # back to home button - will be deleted when menu will exist
-        button2 = tk.Button(self, text="Home", command=lambda: controller.show_frame(MainStudentPage))
-        button2.grid(row=3, column=1)
