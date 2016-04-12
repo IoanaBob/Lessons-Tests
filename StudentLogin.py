@@ -47,7 +47,7 @@ class StudentLogin(tk.Frame):
                     if username == key1 and password == value1:
                         tm.showinfo("Login info", "HI")
                         # self.MainStudentPage()
-                        return
+                        return True
 
                     else:
                         tm.showerror("Login error", "Incorrect username or password")
