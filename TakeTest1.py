@@ -1,4 +1,5 @@
 import tkinter as tk
+import json
 LARGE_FONT= ("Verdana", 12)
 
 class TakeTest1(tk.Frame):
@@ -31,10 +32,14 @@ class TakeTest1(tk.Frame):
         menu6 = tk.Button(self, text="Log Out", command=lambda: controller.show_frame(StartPage))
         menu6.grid(row=0, column=5)
         #=====================================
+        # 
+        # with open('questions.json') as data_file:
+        #     questions_data = json.load(data_file)
+
 
         label = tk.Label(self, text="MUST BE FINISHED - MUST HAVE A LOOP GOING THROUGH QUESTIONS ", font=LARGE_FONT)
         label.grid(row=1)
 
         # back to home button - will be deleted when menu will exist
-        button2 = tk.Button(self, text="Home", command=lambda: controller.show_frame(MainStudentPage))
-        button2.grid(row=3, column=1)
+        # button2 = tk.Button(self, text="Home", command=lambda: controller.show_frame(MainStudentPage))
+        # button2.grid(row=3, column=1)

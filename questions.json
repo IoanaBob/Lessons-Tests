@@ -1,97 +1,95 @@
 {"Questions":[
-  {"Index": "1", 
-  	"Question Topic":"Probability", 
+  {"Index": "1",
+  	"Question Topic":"Probability",
   	"Question Header":"A card is drawn from a set of 52. What is the probability that card is ",
   	"Question Content" :
-  		{"Question": "Red", "Correct_answer":"1/2", "Answers": 
+  		{"Question": "Red", "Correct_answer":"1/2", "Answers":
   			{"Answer_1":"1/3", "Answer_2":"1/4", "Answer_3":"22/52", "Answer_4":"1/8","Answer_5":"2/16", "Answer_6":"4/16", "Answer_7":"1/6", "Answer_8":"1"}
-   		} 
-   		{"Question": "Either a heart or club", "Correct_answer":"1/2", "Answers": 
+   		}
+   		{"Question": "Either a heart or club", "Correct_answer":"1/2", "Answers":
   			{"Answer_1":"1/3", "Answer_2":"1/4", "Answer_3":"22/52", "Answer_4":"1/8","Answer_5":"2/16", "Answer_6":"4/16", "Answer_7":"1/6", "Answer_8":"1"}
-   		}   		
-   		{"Question": "Either a 5 or 6", "Correct_answer":"2/13", "Answers": 
+   		}
+   		{"Question": "Either a 5 or 6", "Correct_answer":"2/13", "Answers":
   			{"Answer_1":"1/2", "Answer_2":"1/4", "Answer_3":"1/6", "Answer_4":"1/8","Answer_5":"2/16", "Answer_6":"12/52", "Answer_7":"6/26", "Answer_8":"3/13"}
    		}
-   		{"Question": "Not a red ace", "Correct_answer":"25/26", "Answers": 
+   		{"Question": "Not a red ace", "Correct_answer":"25/26", "Answers":
   			{"Answer_1":"20/52", "Answer_2":"1/2", "Answer_3":"1/4", "Answer_4":"1/6","Answer_5":"51/52", "Answer_6":"15/32", "Answer_7":"2/52", "Answer_8":"1/26"}
-   		}   		
-   		{"Question": "Not red or not an ace", "Correct_answer":"25/26", "Answers": 
+   		}
+   		{"Question": "Not red or not an ace", "Correct_answer":"25/26", "Answers":
   			{"Answer_1":"20/52", "Answer_2":"1/2", "Answer_3":"1/4", "Answer_4":"1/6","Answer_5":"51/52", "Answer_6":"15/32", "Answer_7":"2/52", "Answer_8":"1/26"}
-   		}   		
+   		}
   },
 
-  {"Index": "2", 
-  	"Question Topic":"Probability", 
+  {"Index": "2",
+  	"Question Topic":"Probability",
   	"Question Header":"A 6 sided dice is thrown 4 times, what is the probability that: ",
   	"Question Content" :
-  		{"Question": "4 sixes occur", "Correct_answer":"0.0008", "Answers": 
+  		{"Question": "4 sixes occur", "Correct_answer":"0.0008", "Answers":
   			{"Answer_1":"0.008", "Answer_2":"0.00016", "Answer_3":"0.08", "Answer_4":"0.01","Answer_5":"0.0004", "Answer_6":"0.002"}
-   		} 
-   		{"Question": "Atleast 1 siz occur", "Correct_answer":"0.52", "Answers": 
+   		}
+   		{"Question": "Atleast 1 siz occur", "Correct_answer":"0.52", "Answers":
   			{"Answer_1":"52", "Answer_2":"0.052", "Answer_3":"0.026", "Answer_4":"0.52","Answer_5":"0.002", "Answer_6":"0.2", "Answer_7":"0.5"}
-   		}   		
-   		{"Question": "Four different numbers occur", "Correct_answer":"0.28", "Answers": 
+   		}
+   		{"Question": "Four different numbers occur", "Correct_answer":"0.28", "Answers":
   			{"Answer_1":"0.028", "Answer_2":"0.052", "Answer_3":"0.2", "Answer_4":"0.0052","Answer_5":"0.0023", "Answer_6":"23"}
    		}
-	
+
   },
-  {"Index": "3", 
-  	"Question Topic":"Probability", 
+  {"Index": "3",
+  	"Question Topic":"Probability",
   	"Question Header":"What is the probabilty of rolling 2 sixes when one dice is ",
   	"Question Content" :
-  		{"Question": "rolled twice", "Correct_answer":"1/36", "Answers": 
+  		{"Question": "rolled twice", "Correct_answer":"1/36", "Answers":
   			{"Answer_1":"2/36", "Answer_2":"0.3", "Answer_3":"0.003", "Answer_4":"1/23","Answer_5":"1/18", "Answer_6":"0.002", "Answer_7":"0.002"}
-   		} 
+   		}
 	},
-	{"Index": "4", 
-  	"Question Topic":"Probability", 
+	{"Index": "4",
+  	"Question Topic":"Probability",
   	"Question Header":"What is the probability of ",
   	"Question Content" :
-  		{"Question": "rolling atleast 3 from a standard dice", "Correct_answer":"2/3", "Answers": 
+  		{"Question": "rolling atleast 3 from a standard dice", "Correct_answer":"2/3", "Answers":
   			{"Answer_1":"3/6", "Answer_2":"1/2", "Answer_3":"5/6", "Answer_4":"2/4","Answer_5":"1/6", "Answer_6":"1/18", "Answer_7":"0.002", "Answer_8":"0.02"}
-   		} 
+   		}
 	},
-	{"Index": "5", 
-  	"Question Topic":"Probability", 
+	{"Index": "5",
+  	"Question Topic":"Probability",
   	"Question Header":"What is the relationship between the probability of ",
   	"Question Content" :
-  		{"Question": "an event and its compliment ", "Correct_answer":"P(U+0112)= 1-P(E)", "Answers": 
+  		{"Question": "an event and its compliment ", "Correct_answer":"P(U+0112)= 1-P(E)", "Answers":
   			{"Answer_1":"P(E)= 1-P(U+0112)", "Answer_2":"P(U+0112) = 1 + P(E)"}
-   		} 
+   		}
 	},
 
-	{"Index": "6", 
-  	"Question Topic":"Probability", 
+	{"Index": "6",
+  	"Question Topic":"Probability",
   	"Question Header":"What is the ",
   	"Question Content" :
-  		{"Question": "sum rule", "Correct_answer":"P(A U+222A B) = P(A) + P(B) - P(A U+2229 B)", "Answers": 
+  		{"Question": "sum rule", "Correct_answer":"P(A U+222A B) = P(A) + P(B) - P(A U+2229 B)", "Answers":
   			{"Answer_1":"P(A U+222A B) = P(A) + P(B)", "Answer_2":"P(A U+222A B) = P(A) - P(B) + P(A U+2229 B)", "Answer_3":"P(A U+2229 B) = P(A) +P(B) + P(A U+222A B)"}
-   		} 
+   		}
 	},
-	{"Index": "7", 
-  	"Question Topic":"Probability", 
+	{"Index": "7",
+  	"Question Topic":"Probability",
   	"Question Header":"A bag containing 4 red, 2 blue, and 6 green balls, what is the probability that: ",
   	"Question Content" :
-  		{"Question": "Two balls are drawn without replacement and all 3 are red", "Correct_answer":"1/3", "Answers": 
+  		{"Question": "Two balls are drawn without replacement and all 3 are red", "Correct_answer":"1/3", "Answers":
   			{"Answer_1":"3/12", "Answer_2":"4/12", "Answer_3":"2/6","Answer_4":"3/11", "Answer_5":"2/10", "Answer_6":"4/11", "Answer_7":"2/12", "Answer_8":"4/10"}
-   		} 
-   		{"Question": "Two balls are drawn with replacement and 1 is red and 1 is green", "Correct_answer":"1/3", "Answers": 
+   		}
+   		{"Question": "Two balls are drawn with replacement and 1 is red and 1 is green", "Correct_answer":"1/3", "Answers":
   			{"Answer_1":"2/3", "Answer_2":"3/12", "Answer_3":"4/11", "Answer_4":"2/12","Answer_5":"5/12", "Answer_6":"2/11", "Answer_7":"4/10"}
-   		}   		
-   		{"Question": "Three balls are drawn without replacement and all three are red", "Correct_answer":"1/55", "Answers": 
+   		}
+   		{"Question": "Three balls are drawn without replacement and all three are red", "Correct_answer":"1/55", "Answers":
   			{"Answer_1":"2/55", "Answer_2":"1/25", "Answer_3":"2/20", "Answer_4":"4/10","Answer_5":"4/12", "Answer_6":"1/12", "Answer_7": "1/6", "Answer_8":"1/3"}
    		}
-	
+
 	},
 
-	{"Index": "8", 
-  	"Question Topic":"Probability", 
+	{"Index": "8",
+  	"Question Topic":"Probability",
   	"Question Header":"A set of tickets numbered 1 to 20 are mixed up and one is picked at random, what is the probability that the tickets are : ",
   	"Question Content" :
-  		{"Question": "a multiple of 3 or 5", "Correct_answer":"9/20", "Answers": 
+  		{"Question": "a multiple of 3 or 5", "Correct_answer":"9/20", "Answers":
   			{"Answer_1":"10/20", "Answer_2":"3/6", "Answer_3":"2/10","Answer_4":"8/20", "Answer_5":"9/10", "Answer_6":"13/20", "Answer_7":"7/10", "Answer_8":"7/20"}
-   		} 
+   		}
 
 	}
-
-  ]}
