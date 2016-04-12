@@ -2,6 +2,7 @@ import tkinter as tk
 from StartPage import StartPage
 from StudentLogin import StudentLogin
 from MainStudentPage import MainStudentPage
+from MainTeacherPage import MainTeacherPage
 from ViewLesson1 import ViewLesson1
 from ViewLesson2 import *
 from TakeTest1 import *
@@ -27,7 +28,7 @@ class main(tk.Tk):
 
         self.frames = {}
 
-        for F in (StartPage, StudentLogin, TeacherLogin, MainStudentPage, ViewLesson1, ViewLesson2, TakeTest1, TakeTest2):
+        for F in (StartPage, StudentLogin, TeacherLogin, MainStudentPage, MainTeacherPage, ViewLesson1, ViewLesson2, TakeTest1, TakeTest2):
 
             frame = F(container, self)
 
