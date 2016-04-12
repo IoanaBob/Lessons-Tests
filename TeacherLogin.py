@@ -49,7 +49,7 @@ class TeacherLogin(tk.Frame):
             tm.showerror("Login Error", "Incorrect Username or pass")
             return
 
-        if user_data['Teachers'][username] == password:
+        if user_data['Users'][username] == password:
             controller.show_frame(MainTeacherPage)
             return
         else:

@@ -1,6 +1,10 @@
 import tkinter as tk
+import json
 from TakeTest2 import TakeTest2
 LARGE_FONT= ("Verdana", 12)
+
+with open('lessons.json') as data_file:
+    lesson_data = json.load(data_file)
 
 class ViewLesson2(tk.Frame):
 
@@ -32,15 +36,12 @@ class ViewLesson2(tk.Frame):
         menu6.grid(row=0, column=5)
         #=====================================
 
-        label = tk.Label(self, text="{lesson 2 name}", font=LARGE_FONT)
+        label = tk.Label(self, text=lesson_data['Lessons'][1]['Lesson Title'], font=LARGE_FONT)
         label.grid(row=1)
 
         text = tk.Text(self)
-        text.insert(tk.INSERT, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pharetra libero lacus, vitae posuere neque placerat ut. Fusce imperdiet consequat justo quis maximus. Donec nec ligula elementum, placerat erat congue, feugiat nulla. Aenean vel dolor nibh. Donec tincidunt justo eget tellus suscipit accumsan. Cras sollicitudin convallis diam sit amet fringilla. Proin lacinia, metus eu aliquam accumsan, libero ligula convallis lectus, vitae volutpat quam lorem nec nulla. Donec sit amet sem eget ante accumsan sollicitudin lacinia eget orci. Sed ut pellentesque mauris. Mauris ac risus iaculis, aliquet elit id, sagittis ipsum. Pellentesque lobortis bibendum lorem eget gravida. In quis iaculis erat. Quisque vel mi varius, iaculis elit in, molestie magna. Nullam lacinia ante odio, vitae maximus sapien consequat et. Aliquam et ligula pretium, pretium felis ac, convallis sapien. Donec placerat dapibus ipsum, sit amet volutpat turpis efficitur eu.")
+        text.insert(tk.INSERT, lesson_data['Lessons'][1]['Lesson Content'])
 
-        text.insert(tk.END,"Morbi ac interdum odio. In nec turpis nisi. Vivamus efficitur sapien eu libero feugiat aliquam. Nunc eget justo vitae dolor egestas placerat sed id sem. Sed mollis felis non tortor accumsan, sit amet consectetur diam tristique. Pellentesque auctor est in lacus feugiat porttitor. Duis sit amet est quam. Proin tristique eu lacus eu vehicula.")
-
-        text.insert(tk.END, "Fusce eget rhoncus justo. Pellentesque ut ipsum ac massa porta venenatis at malesuada orci. Suspendisse sollicitudin mollis aliquam. Sed nunc ligula, aliquet id massa et, tincidunt interdum lacus. Quisque at sodales eros, quis scelerisque nisl. Integer a justo nec justo ullamcorper tincidunt. Mauris eu enim aliquam sapien mollis vestibulum in at massa.")
         text.config(state=tk.DISABLED)
         text.grid(row=2)
 
