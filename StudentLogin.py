@@ -43,11 +43,11 @@ class StudentLogin(tk.Frame):
             user_data = json.load(data_file)
 
         try:
-            username = user_data['Students'][username]
+            user_data['Students'][username]
         except KeyError:
             tm.showerror("Login Error", "Incorrect Username or pass")
-            return 
-        if username == password:
+            return
+        if user_data['Students'][username] == password:
             controller.show_frame(MainStudentPage)
             return
 

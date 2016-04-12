@@ -31,7 +31,7 @@ class TeacherLogin(tk.Frame):
         log_in_button.grid(row=3, column=1)
 
 
-        
+
         button1 = tk.Button(self, text="Back to Home", command=lambda: controller.show_frame(StartPage))
 
         button1.grid(row=3, column=0)
@@ -43,11 +43,14 @@ class TeacherLogin(tk.Frame):
 
         with open('users.json') as data_file:
             user_data = json.load(data_file)
+        try:
+            user_data['Teachers'][username]
+        except KeyError:
+            tm.showerror("Login Error", "Incorrect Username or pass")
+            return
 
         if user_data['Teachers'][username] == password:
             controller.show_frame(MainTeacherPage)
             return
-
         else:
             tm.showerror("Login Error", "Incorrect Username or pass")
-
