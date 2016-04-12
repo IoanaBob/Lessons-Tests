@@ -41,7 +41,7 @@ class StudentLogin(tk.Frame):
         with open('users.json') as data_file:
             user_data = json.load(data_file)
 
-        if user_data['Users'][username] == password:
+        if user_data['Students'][username] == password:
             controller.show_frame(MainStudentPage)
             return
 
