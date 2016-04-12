@@ -2,6 +2,9 @@ import tkinter as tk
 import json
 LARGE_FONT= ("Verdana", 12)
 
+with open('questions.json') as data_file:
+    test_data = json.load(data_file)
+
 class TakeTest1(tk.Frame):
 
     def __init__(self, parent, controller):
@@ -16,6 +19,7 @@ class TakeTest1(tk.Frame):
         from StartPage import StartPage
         from MainStudentPage import MainStudentPage
         from MyGrades import MyGrades
+        from TestPages import TestPages
         #=====================================
         # MENU STARTS HERE
         # TODO: make buttons stay one near each other (not depending on the other columns)
@@ -39,6 +43,9 @@ class TakeTest1(tk.Frame):
 
         label = tk.Label(self, text="MUST BE FINISHED - MUST HAVE A LOOP GOING THROUGH QUESTIONS ", font=LARGE_FONT)
         label.grid(row=1)
+
+        menu6 = tk.Button(self, text="Log Out", command=lambda: controller.show_frame(TestPages))
+        menu6.grid(row=2, column=5)
 
         # back to home button - will be deleted when menu will exist
         # button2 = tk.Button(self, text="Home", command=lambda: controller.show_frame(MainStudentPage))

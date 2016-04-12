@@ -14,7 +14,7 @@ from EditTest2 import EditTest2
 from Statistics import Statistics
 from MyGrades import MyGrades
 from TeacherLogin import TeacherLogin
-
+from TestPages import TestPages
 
 
 LARGE_FONT= ("Verdana", 12)
@@ -43,10 +43,17 @@ class main(tk.Tk):
 
             frame.grid(column=0, row=0, sticky='nwes')
 
+        for i in range(0,1):
+            frame = TestPages(i, container, self)
+
+            self.frames[TestPages] = frame
+
+            frame.grid(column=0, row=0, sticky='nwes')
+
         self.show_frame(StartPage)
 
-    def show_frame(self, cont):
 
+    def show_frame(self, cont):
         frame = self.frames[cont]
         frame.tkraise()
 
