@@ -4,7 +4,9 @@ from StudentLogin import StudentLogin
 from MainStudentPage import MainStudentPage
 from MainTeacherPage import MainTeacherPage
 from ViewLesson1 import ViewLesson1
-from ViewLesson2 import *
+from ViewLesson2 import ViewLesson2
+from EditLesson1 import EditLesson1
+from EditLesson2 import EditLesson2
 from TakeTest1 import *
 from TakeTest2 import *
 from TeacherLogin import TeacherLogin
@@ -28,7 +30,7 @@ class main(tk.Tk):
 
         self.frames = {}
 
-        for F in (StartPage, StudentLogin, TeacherLogin, MainStudentPage, MainTeacherPage, ViewLesson1, ViewLesson2, TakeTest1, TakeTest2):
+        for F in (StartPage, StudentLogin, TeacherLogin, MainStudentPage, MainTeacherPage, ViewLesson1, ViewLesson2, EditLesson1, EditLesson2, TakeTest1, TakeTest2):
 
             frame = F(container, self)
 

@@ -1,12 +1,17 @@
 import tkinter as tk
+import json
+from TakeTest1 import TakeTest1
 
 LARGE_FONT= ("Verdana", 12)
 
-class MainTeacherPage(tk.Frame):
+with open('lessons.json') as data_file:
+    lesson_data = json.load(data_file)
+
+class EditLesson2(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        
+
         # moved all the other page imports, makes it more clear and it works in any case.
         # add more here, too, if you need to.
         from EditLesson1 import EditLesson1
@@ -14,6 +19,7 @@ class MainTeacherPage(tk.Frame):
         from TakeTest1 import TakeTest1
         from TakeTest2 import TakeTest2
         from StartPage import StartPage
+        from MainTeacherPage import MainTeacherPage
         #=====================================
         # MENU STARTS HERE
         # TODO: make buttons stay one near each other (not depending on the other columns)
@@ -31,16 +37,24 @@ class MainTeacherPage(tk.Frame):
         menu6.grid(row=0, column=5)
         #=====================================
 
-        label = tk.Label(self, text="Hello", font=LARGE_FONT)
+        label = tk.Label(self, text=lesson_data['Lessons'][1]['Lesson Title'], font=LARGE_FONT)
         label.grid(row=1)
-        # Go to view lesson1
-        button1 = tk.Button(self, text="Edit Lesson 1", command=lambda: controller.show_frame(EditLesson1))
-        button1.grid(row=2, column=1)
 
-        # Go to view test1
-        button2 = tk.Button(self, text="Edit Lesson 2", command=lambda: controller.show_frame(EditLesson2))
-        button2.grid(row=3, column=1)
+        text = tk.Text(self)
+        text.insert(tk.INSERT, lesson_data['Lessons'][1]['Lesson Content'])
 
-        # back to home button - will be deleted when menu will exist - also you cant go back if logged in       button3 = tk.Button(self, text="Back to Home", command=lambda: controller.show_frame(StartPage))
-        button3 = tk.Button(self, text="Back to Home", command=lambda: controller.show_frame(StartPage))
-        button3.grid(row=4, column=1)
+
+        text.grid(row=2)
+        # =================================
+        # TODO - when modified, the new text in the textbox is saved in te JSON
+        # A SAVE BUTTON IS NEEDED HERE
+        # =================================
+
+        # Go to edit test
+        button1 = tk.Button(self, text="Edit test", command=lambda: controller.show_frame(TakeTest1))
+        button1.grid(row=3)
+
+        # back to lessons
+        button2 = tk.Button(self, text="Back to Lessons",
+                            command=lambda: controller.show_frame(MainTeacherPage))
+        button2.grid(row=4)
