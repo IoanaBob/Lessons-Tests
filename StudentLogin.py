@@ -35,6 +35,7 @@ class StudentLogin(tk.Frame):
         button1.grid(row=3, column=0)
 
     def login(self, controller):
+        global username
         username = self.e1.get()
         password = self.e2.get()
 
