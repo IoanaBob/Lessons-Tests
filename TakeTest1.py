@@ -19,7 +19,7 @@ class TakeTest1(tk.Frame):
         from StartPage import StartPage
         from MainStudentPage import MainStudentPage
         from MyGrades import MyGrades
-        from TestPages import TestPages
+        from TestPage1 import TestPage1
         #=====================================
         # MENU STARTS HERE
         # TODO: make buttons stay one near each other (not depending on the other columns)
@@ -44,7 +44,7 @@ class TakeTest1(tk.Frame):
         label = tk.Label(self, text="MUST BE FINISHED - MUST HAVE A LOOP GOING THROUGH QUESTIONS ", font=LARGE_FONT)
         label.grid(row=1)
 
-        menu6 = tk.Button(self, text="Log Out", command=lambda: controller.show_frame(TestPages))
+        menu6 = tk.Button(self, text="Take Test 1", command=lambda: controller.show_frame(TestPage1))
         menu6.grid(row=2, column=5)
 
         # back to home button - will be deleted when menu will exist
