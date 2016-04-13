@@ -10,12 +10,17 @@ class StudentLogin(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        label = tk.Label(self, text="Log In!", font=LARGE_FONT)
+
+        self.headFont = font.Font(family="Helvetica Neue Light", weight="normal", size=30)
+        self.titleFont = font.Font(family="Helvetica Neue Light", weight="normal", size=20)
+        self.buttonFont = font.Font(family="Helvetica Neue Light", weight="normal", size=18)
+
+        label = tk.Label(self, text="Log In", font=self.headFont, padx=10, pady=10)
         label.grid(row=0, column=1)
 
         # Adding the long in input fields
-        self.number = tk.Label(self, text="Student number:").grid(row=1)
-        self.password = tk.Label(self, text="Password:").grid(row=2)
+        self.number = tk.Label(self, text="Student number:", font=self.titleFont).grid(row=1, sticky="E")
+        self.password = tk.Label(self, text="Password:", font=self.titleFont).grid(row=2, sticky="E")
 
         self.e1 = tk.Entry(self)
         self.e2 = tk.Entry(self, show="*")
@@ -24,15 +29,15 @@ class StudentLogin(tk.Frame):
         self.e2.grid(row=2, column=1)
         ####################################
         # login button - goes to the lessons
-        log_in_button = tk.Button(self, text="Log in", command=lambda: self.login(controller))
+        log_in_button = tk.Button(self, text="Log in", font=self.buttonFont, padx=4, pady=4, command=lambda: self.login(controller))
         log_in_button.grid(row=3, column=1)
 
 
         from StartPage import StartPage
 
-        button1 = tk.Button(self, text="Back to Home", command=lambda: controller.show_frame(StartPage))
+        button1 = tk.Button(self, text="Back to Home", font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(StartPage))
 
-        button1.grid(row=3, column=0)
+        button1.grid(row=0, column=0)
 
     def login(self, controller):
         global username
