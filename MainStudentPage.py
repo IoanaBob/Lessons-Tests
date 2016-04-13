@@ -16,6 +16,7 @@ class MainStudentPage(tk.Frame):
         from TakeTest1 import TakeTest1
         from TakeTest2 import TakeTest2
         from StartPage import StartPage
+        from MyGrades import MyGrades
         #=====================================
         # MENU STARTS HERE
         # TODO: make buttons stay one near each other (not depending on the other columns)

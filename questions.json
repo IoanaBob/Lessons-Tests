@@ -1,4 +1,68 @@
 {"Questions":[
-  {"Index": "1", "Quetion Topic":"example", "Question Content":"Blah", "Answer_1":"1", "Correct_answer":"Soemthing"},
-  {"Index": "1", "Quetion Topic":"example", "Question Content":"Blah", "Answer_1":"1", "Correct_answer":"Soemthing"}
-  ]}
+  {
+  	"Question Topic":"Probability with a pack of cards",
+  	"Question Header":"A card is drawn from a set of 52. What is the probability that card is ",
+  	"Question Content" :
+  		[
+          {"Question":"red?", "Correct Answer":"1/2", "Answers": ["1/2", "1/3", "1/4", "22/52", "1/8", "2/16", "4/16", "1/6", "1"]},
+          {"Question":"either a heart or club?", "Correct Answer":"1/2", "Answers": ["1/2","1/3", "1/4", "22/52", "1/8"]},
+          {"Question":"either a 5 or 6?", "Correct Answer":"2/13", "Answers": ["1/2","1/4","1/6","1/8","2/16","12/52","6/26","3/13"]},
+          {"Question":"not a red Ace?", "Correct Answer":"25/26", "Answers": ["20/52","1/2","1/4","1/6","51/52","15/32","2/52","1/26"]},
+          {"Question":"not red or not an Ace?", "Correct Answer":"25/26", "Answers": ["20/52","1/2","1/4","1/6","51/52","15/32","2/52","1/26"]}
+      ]
+  },
+  {
+  	"Question Topic":"Probability with one die",
+  	"Question Header":"A six sided dice is thrown 4 times, what is the probability that ",
+  	"Question Content" :
+  		[
+          {"Question":"4 sixes occur?", "Correct Answer":"0.0008", "Answers": ["0.008","0.00016","0.08","0.01","0.0004","0.002"]},
+          {"Question":"at least 1 six occurs?", "Correct Answer":"0.52", "Answers": ["52","0.052","0.026","0.002","0.2","0.5"]},
+          {"Question":"four different numbers occur?", "Correct Answer":"0.28", "Answers": ["0.28","0.052","0.2","0.0052","0.0023","23"]}
+      ]
+  },
+  {
+  	"Question Topic":"Probability: Rolling boxcars",
+  	"Question Header":"What is the probability of rolling 2 sixes when one of the die is ",
+  	"Question Content" :
+  		[
+          {"Question":"rolled twice?", "Correct Answer":"1/36", "Answers": ["2/36","0.3","0.003","1/23","1/18","0.002","0.002"]}
+      ]
+  },
+  {
+  	"Question Topic":"Probability: General",
+  	"Question Header":"What is the probability of ",
+  	"Question Content" :
+  		[
+          {"Question":"rolling at least 3 from an unbiased standard dice?", "Correct Answer":"2/3", "Answers": ["3/6","1/2","5/6","2/5","1/6","1/18","0.25","0.02"]}
+      ]
+  },
+  {
+  	"Question Topic":"Probability: Trivia",
+  	"Question Header":"What is the ",
+  	"Question Content" :
+  		[
+          {"Question":"relationship between the probability of an event and it's compliment?", "Correct Answer":"P(U+0112) = 1-P(E)", "Answers": ["P(E) = 1-P(U+0112)", "P(U+0112) = 1 + P(E)"]},
+          {"Question":"sum rule?", "Correct Answer":"P(A U+222A B) = P(A) + P(B) - P(A U+2229 B)", "Answers": ["P(A U+222A B) = P(A) + P(B)", "P(A U+222A B) = P(A) - P(B) + P(A U+2229 B)", "P(A U+2229 B) = P(A) +P(B) + P(A U+222A B)"]}
+      ]
+  },
+  {
+  	"Question Topic":"Probability with marbles",
+  	"Question Header":"A bag containing 4 red, 2 blue, and 6 green balls, what is the probability that ",
+  	"Question Content" :
+  		[
+          {"Question":"two balls are drawn without replacement and both are red?", "Correct Answer":"1/3", "Answers": ["3/12","4/12","2/6","3/11","2/10","4/11","2/12","4/10"]},
+          {"Question":"two balls are drawn with replacement and 1 is red and 1 is green?", "Correct Answer":"1/3", "Answers": ["2/3","3/13","4/11","2/12","5/12","2/11","4/10"]},
+          {"Question":"three balls are drawn without replacement and all three are red?", "Correct Answer":"1/55", "Answers": ["2/55","1/25","2/20","4/10","4/12","1/12","1/6","1/3"]}
+      ]
+  },
+  {
+  	"Question Topic":"Probability with tickets",
+  	"Question Header":"A set of tickets numbered 1 to 20 are mixed up and one is picked at random, what is the probability that the tickets are ",
+  	"Question Content" :
+  		[
+          {"Question":"a multiple of 3 or 5?", "Correct Answer":"9/20", "Answers": ["10/20","3/6","2/10","8/20","9/10","13/20","7/10","7/20"]}
+      ]
+  }
+  ]
+}
