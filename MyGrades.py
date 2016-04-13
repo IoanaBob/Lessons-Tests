@@ -31,5 +31,5 @@ class MyGrades(tk.Frame):
         menu6.grid(row=0, column=5)
         #=====================================
 
-        label = tk.Label(self, text="MUST BE FINISHED", font=LARGE_FONT)
+        label = tk.Label(self, text="All test results from user here", font=LARGE_FONT)
         label.grid(row=1)
