@@ -7,7 +7,7 @@ class MainTeacherPage(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        
+
         # moved all the other page imports, makes it more clear and it works in any case.
         # add more here, too, if you need to.
         from EditLesson1 import EditLesson1
@@ -21,30 +21,31 @@ class MainTeacherPage(tk.Frame):
         #=====================================
         # MENU STARTS HERE
         # TODO: make buttons stay one near each other (not depending on the other columns)
-        menu1 = tk.Button(self, text="Edit Lesson 1", command=lambda: controller.show_frame(EditLesson1))
-        menu1.grid(row=0, column=0)
-        menu2 = tk.Button(self, text="Edit Lesson 2", command=lambda: controller.show_frame(EditLesson2))
-        menu2.grid(row=0, column=1)
-        menu3 = tk.Button(self, text="Modify Test 1", command=lambda: controller.show_frame(EditTest1))
-        menu3.grid(row=0, column=2)
-        menu4 = tk.Button(self, text="Modify Test 2", command=lambda: controller.show_frame(EditTest2))
-        menu4.grid(row=0, column=3)
-        menu5 = tk.Button(self, text="Statistics", command=lambda: controller.show_frame(Statistics))
-        menu5.grid(row=0, column=4)
-        menu6 = tk.Button(self, text="Log Out", command=lambda: controller.show_frame(StartPage))
-        menu6.grid(row=0, column=5)
+
+        self.headFont = font.Font(family="Helvetica Neue Light", weight="normal", size=30)
+        self.titleFont = font.Font(family="Helvetica Neue Light", weight="normal", size=20)
+        self.buttonFont = font.Font(family="Helvetica Neue Light", weight="normal", size=18)
+
+        menu1 = tk.Button(self, text="Edit Probability Lesson", width=17, padx=4, pady=4, font=self.buttonFont, command=lambda: controller.show_frame(EditLesson1))
+        menu1.grid(row=1, column=0)
+        menu2 = tk.Button(self, text="Edit Sets Lesson", width=17, padx=4, pady=4, font=self.buttonFont, command=lambda: controller.show_frame(EditLesson2))
+        menu2.grid(row=1, column=1)
+        menu3 = tk.Button(self, text="Modify Probability Test", width=17, padx=4, pady=4, font=self.buttonFont, command=lambda: controller.show_frame(EditTest1))
+        menu3.grid(row=2, column=0)
+        menu4 = tk.Button(self, text="Modify Sets Test", width=17, padx=4, pady=4, font=self.buttonFont, command=lambda: controller.show_frame(EditTest2))
+        menu4.grid(row=2, column=1)
+        menu5 = tk.Button(self, text="View Statistics", width=17, padx=4, pady=4, font=self.buttonFont, command=lambda: controller.show_frame(Statistics))
+        menu5.grid(row=3, column=0, columnspan=2)
+        menu6 = tk.Button(self, text="Log Out", width=17, padx=4, pady=4, font=self.buttonFont, command=lambda: controller.show_frame(StartPage))
+        menu6.grid(row=5, column=0)
         #=====================================
 
-        label = tk.Label(self, text="Hello", font=LARGE_FONT)
-        label.grid(row=1)
-        # Go to view lesson1
-        button1 = tk.Button(self, text="Edit Lesson 1", command=lambda: controller.show_frame(EditLesson1))
-        button1.grid(row=2, column=1)
+        label = tk.Label(self, text="Welcome back.", font=self.headFont)
+        label.grid(row=0, column=0, columnspan=2)
 
-        # Go to view test1
-        button2 = tk.Button(self, text="Edit Lesson 2", command=lambda: controller.show_frame(EditLesson2))
-        button2.grid(row=3, column=1)
+        blank_space = tk.Label(self, text="")
+        blank_space.grid(row=4, column=0, columnspan=2)
 
         # back to home button - will be deleted when menu will exist - also you cant go back if logged in       button3 = tk.Button(self, text="Back to Home", command=lambda: controller.show_frame(StartPage))
-        button3 = tk.Button(self, text="Back to Home", command=lambda: controller.show_frame(StartPage))
-        button3.grid(row=4, column=1)
+        button3 = tk.Button(self, text="Back to Home", font=self.buttonFont, padx=4, pady=4, width=17, command=lambda: controller.show_frame(StartPage))
+        button3.grid(row=5, column=1)
