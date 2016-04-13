@@ -1,4 +1,6 @@
 import tkinter as tk
+import StudentLogin
+from tkinter import font
 
 LARGE_FONT= ("Verdana", 12)
 
@@ -17,30 +19,30 @@ class MainStudentPage(tk.Frame):
         #=====================================
         # MENU STARTS HERE
         # TODO: make buttons stay one near each other (not depending on the other columns)
-        menu1 = tk.Button(self, text="Lesson 1", command=lambda: controller.show_frame(ViewLesson1))
-        menu1.grid(row=0, column=0)
-        menu2 = tk.Button(self, text="Lesson 2", command=lambda: controller.show_frame(ViewLesson2))
-        menu2.grid(row=0, column=1)
-        menu3 = tk.Button(self, text="Test 1", command=lambda: controller.show_frame(TakeTest1))
-        menu3.grid(row=0, column=2)
-        menu4 = tk.Button(self, text="Test 2", command=lambda: controller.show_frame(TakeTest2))
-        menu4.grid(row=0, column=3)
-        menu5 = tk.Button(self, text="My Grades", command=lambda: controller.show_frame(ViewLesson2))
-        menu5.grid(row=0, column=4)
-        menu6 = tk.Button(self, text="Log Out", command=lambda: controller.show_frame(StartPage))
-        menu6.grid(row=0, column=5)
+        #root.configure(background="alice blue")
+
+        self.headFont = font.Font(family="Helvetica Neue Light", weight="normal", size=30)
+        self.titleFont = font.Font(family="Helvetica Neue Light", weight="normal", size=20)
+        self.buttonFont = font.Font(family="Helvetica Neue Light", weight="normal", size=18)
+
+        menu1 = tk.Button(self, text="Take Sets Lesson", width=20, font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(ViewLesson1))
+        menu1.grid(row=2, column=0)
+        menu2 = tk.Button(self, text="Take Probability Lesson", width=20, font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(ViewLesson2))
+        menu2.grid(row=3, column=0)
+        menu3 = tk.Button(self, text="Take Sets Test", width=20, font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(TakeTest1))
+        menu3.grid(row=2, column=1)
+        menu4 = tk.Button(self, text="Take Probability Test", font=self.buttonFont, padx=4, pady=4, width=20, command=lambda: controller.show_frame(TakeTest2))
+        menu4.grid(row=3, column=1)
+        menu5 = tk.Button(self, text="View My Grades", width=20, font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(ViewLesson2))
+        menu5.grid(row=6, column=0, columnspan=2)
+        menu6 = tk.Button(self, text="Log Out", font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(StartPage))
+        menu6.grid(row=8, column=0, columnspan=2)
         #=====================================
 
-        label = tk.Label(self, text="Hello", font=LARGE_FONT)
-        label.grid(row=1)
-        # Go to view lesson1
-        button1 = tk.Button(self, text="About {lesson 1}", command=lambda: controller.show_frame(ViewLesson1))
-        button1.grid(row=2, column=1)
-
-        # Go to view test1
-        button2 = tk.Button(self, text="About {lesson 2}", command=lambda: controller.show_frame(ViewLesson2))
-        button2.grid(row=3, column=1)
-
-        # back to home button - will be deleted when menu will exist - also you cant go back if logged in       button3 = tk.Button(self, text="Back to Home", command=lambda: controller.show_frame(StartPage))
-        button3 = tk.Button(self, text="Back to Home", command=lambda: controller.show_frame(StartPage))
-        button3.grid(row=4, column=1)
+        #welcome_message = "Welcome back " + str(StudentLogin.username) + "!"
+        label = tk.Label(self, text="Welcome back [enter user name]!", font=self.headFont, padx=15, pady=5)
+        label2 = tk.Label(self, text="Click on a button below.", font=self.titleFont, padx=5)
+        blank_space = tk.Label(self, text="", font=LARGE_FONT)
+        label.grid(row=0, columnspan=2)
+        label2.grid(row=1, columnspan=2)
+        blank_space.grid(row=7)
