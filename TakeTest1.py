@@ -1,5 +1,6 @@
 import tkinter as tk
 import json
+from random import randint
 LARGE_FONT= ("Verdana", 12)
 
 with open('questions.json') as data_file:
@@ -20,8 +21,9 @@ class TakeTest1(tk.Frame):
         from MainStudentPage import MainStudentPage
         from MyGrades import MyGrades
         from TestPages import TestPages
+
         #=====================================
-        # MENU STARTS HERE
+        # Menu
         # TODO: make buttons stay one near each other (not depending on the other columns)
         menu1 = tk.Button(self, text="Lesson 1", command=lambda: controller.show_frame(ViewLesson1))
         menu1.grid(row=0, column=0)
@@ -36,17 +38,58 @@ class TakeTest1(tk.Frame):
         menu6 = tk.Button(self, text="Log Out", command=lambda: controller.show_frame(StartPage))
         menu6.grid(row=0, column=5)
         #=====================================
-        # 
-        # with open('questions.json') as data_file:
-        #     questions_data = json.load(data_file)
 
 
-        label = tk.Label(self, text="MUST BE FINISHED - MUST HAVE A LOOP GOING THROUGH QUESTIONS ", font=LARGE_FONT)
+        label = tk.Label(self, text="Display Quesions", font=LARGE_FONT)
         label.grid(row=1)
 
-        menu6 = tk.Button(self, text="Log Out", command=lambda: controller.show_frame(TestPages))
-        menu6.grid(row=2, column=5)
+        #=====================================
+        # label = tk.Label(self, text=test_data['Questions'][index]['Question Header'], font=LARGE_FONT)
+        # label.grid(row=0)
+        #
+        # param = randint(0,len(test_data['Questions'][index]['Question Content'])-1)
+        #
+        # # label = tk.Label(self, text=test_data['Questions'][index]['Question Content'][param]['Question'], font=LARGE_FONT)
+        # label.grid(row=1)
+        #
+        # answers = test_data['Questions'][index]['Question Content'][param]['Answers']
+        # j = 0
+        # for answer in answers:
+        #     label = tk.Label(self, text=answer, font=LARGE_FONT)
+        #     label.grid(row=2, column=j)
+        #     j += 1
+        #
+        #
+        # if index < (len(test_data['Questions']) - 1):
+        #     next = tk.Button(self, text="Lesson 1", command=lambda: controller.show_frame(TestPages(index+1, parent, controller)))
+        #     next.grid(row=3, column=0)
 
-        # back to home button - will be deleted when menu will exist
-        # button2 = tk.Button(self, text="Home", command=lambda: controller.show_frame(MainStudentPage))
-        # button2.grid(row=3, column=1)
+        #=====================================
+
+        #for all Questions
+        # display topic
+        # randomly select question
+        # display question header concatenated with question content
+        # display answers as radio buttons
+
+
+
+        for i in range(0, len(test_data['Questions'])):
+            label = tk.Label(self, text=test_data['Questions'][i]['Question Topic'])
+            label.grid(row=i+4)
+            concat_text = test_data['Questions'][i]['Question Header'] + test_data['Questions'][i]['Question Content'][0]['Question']
+            label = tk.Label(self, text=concat_text)
+            label.grid(row=i+8)
+
+            # fix this 
+
+
+        # label = tk.Label(self, text = test_data['Questions'][])
+
+
+
+
+
+
+        R1 = tk.Radiobutton(self, text="option 1", font=LARGE_FONT, indicatoron=0)
+        R1.grid(row=2)
