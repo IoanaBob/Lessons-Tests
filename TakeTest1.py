@@ -20,8 +20,12 @@ class TakeTest1(tk.Frame):
         from StartPage import StartPage
         from MainStudentPage import MainStudentPage
         from MyGrades import MyGrades
+<<<<<<< HEAD
+        from TestPage1 import TestPage1
+=======
         from TestPages import TestPages
 
+>>>>>>> 16ce6beb21e96bacee5e1fe96a41a61fcb6a0672
         #=====================================
         # Menu
         # TODO: make buttons stay one near each other (not depending on the other columns)
@@ -43,6 +47,10 @@ class TakeTest1(tk.Frame):
         label = tk.Label(self, text="Display Quesions", font=LARGE_FONT)
         label.grid(row=1)
 
+<<<<<<< HEAD
+        menu6 = tk.Button(self, text="Take Test 1", command=lambda: controller.show_frame(TestPage1))
+        menu6.grid(row=2, column=5)
+=======
         #=====================================
         # label = tk.Label(self, text=test_data['Questions'][index]['Question Header'], font=LARGE_FONT)
         # label.grid(row=0)
@@ -90,6 +98,7 @@ class TakeTest1(tk.Frame):
 
 
 
+>>>>>>> 16ce6beb21e96bacee5e1fe96a41a61fcb6a0672
 
         R1 = tk.Radiobutton(self, text="option 1", font=LARGE_FONT, indicatoron=0)
         R1.grid(row=2)

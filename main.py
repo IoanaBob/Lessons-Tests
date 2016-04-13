@@ -14,7 +14,8 @@ from EditTest2 import EditTest2
 from Statistics import Statistics
 from MyGrades import MyGrades
 from TeacherLogin import TeacherLogin
-from TestPages import TestPages
+from TestPage1 import TestPage1
+#from TestPage2 import TestPage2
 
 
 LARGE_FONT= ("Verdana", 12)
@@ -34,19 +35,15 @@ class main(tk.Tk):
 
         self.frames = {}
 
+
         for F in (StartPage, StudentLogin, TeacherLogin, MainStudentPage, MainTeacherPage, ViewLesson1, ViewLesson2,
-            EditLesson1, EditLesson2, TakeTest1, TakeTest2, EditTest1, EditTest2, MyGrades, Statistics):
+            EditLesson1, EditLesson2, TakeTest1, TakeTest2, EditTest1, EditTest2, MyGrades, Statistics,
+            TestPage1):
+
 
             frame = F(container, self)
 
             self.frames[F] = frame
-
-            frame.grid(column=0, row=0, sticky='nwes')
-
-        for i in range(0,1):
-            frame = TestPages(i, container, self)
-
-            self.frames[TestPages] = frame
 
             frame.grid(column=0, row=0, sticky='nwes')
 
