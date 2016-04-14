@@ -1,7 +1,7 @@
 import ast
 import json
 
-
+#JSON NEEDS TO BE IN THE FORMAT: {"username":{"test1":"[6,7,8]","test2":"[3,4,6]"}}
 
 with open('results.json', 'r') as data:
     json_decode = json.load(data)
