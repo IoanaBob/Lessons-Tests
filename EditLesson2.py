@@ -12,6 +12,12 @@ class EditLesson2(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
+        
+        self.headFont = font.Font(family="Helvetica Neue Light", weight="normal", size=30)
+        self.titleFont = font.Font(family="Helvetica Neue Light", weight="normal", size=20)
+        self.buttonFont = font.Font(family="Helvetica Neue Light", weight="normal", size=18)
+        self.textFont = font.Font(family="Helvetica Neue Light", weight="normal", size=12)
+
 
         # moved all the other page imports, makes it more clear and it works in any case.
         # add more here, too, if you need to.
