@@ -20,12 +20,10 @@ class TakeTest1(tk.Frame):
         from StartPage import StartPage
         from MainStudentPage import MainStudentPage
         from MyGrades import MyGrades
-<<<<<<< HEAD
-        from TestPage1 import TestPage1
-=======
-        from TestPages import TestPages
 
->>>>>>> 16ce6beb21e96bacee5e1fe96a41a61fcb6a0672
+        from TestPage1 import TestPage1
+
+
         #=====================================
         # Menu
         # TODO: make buttons stay one near each other (not depending on the other columns)
@@ -47,10 +45,9 @@ class TakeTest1(tk.Frame):
         label = tk.Label(self, text="Display Quesions", font=LARGE_FONT)
         label.grid(row=1)
 
-<<<<<<< HEAD
+
         menu6 = tk.Button(self, text="Take Test 1", command=lambda: controller.show_frame(TestPage1))
         menu6.grid(row=2, column=5)
-=======
         #=====================================
         # label = tk.Label(self, text=test_data['Questions'][index]['Question Header'], font=LARGE_FONT)
         # label.grid(row=0)
@@ -89,16 +86,28 @@ class TakeTest1(tk.Frame):
             label = tk.Label(self, text=concat_text)
             label.grid(row=i+8)
 
-            # fix this 
-
-
-        # label = tk.Label(self, text = test_data['Questions'][])
+            # fix this
 
 
 
+        # # label = tk.Label(self, text = test_data['Questions'][])
+        # vsb = tk.Scrollbar(self, orient="vertical")
+        # text = tk.Text(self, width=40, height=20, yscrollcommand=self)
+        #
+        # # vsb.config(command=self.text.yview)
+        # # vsb.pack(side="right", fill="y")
+        # # text.pack(side="left", fill="both", expand=True)
+        #
+        # for i in range(10):
+        #     cb = tk.Checkbutton(self, text="checkbutton #%s" % i)
+        #     text.window_create("end", window=cb)
+        #     text.insert("end", "\n") # to force one checkbox per line
+        #
+        #
 
 
->>>>>>> 16ce6beb21e96bacee5e1fe96a41a61fcb6a0672
+
+
 
         R1 = tk.Radiobutton(self, text="option 1", font=LARGE_FONT, indicatoron=0)
         R1.grid(row=2)
