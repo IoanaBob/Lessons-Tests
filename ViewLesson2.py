@@ -42,8 +42,10 @@ class ViewLesson2(tk.Frame):
         menu4.grid(row=0, column=4)
         menu5 = tk.Button(self, text="My Grades", padx=4, pady=4, font=self.buttonFont, command=lambda: controller.show_frame(MyGrades))
         menu5.grid(row=0, column=5)
-        menu6 = tk.Button(self, text="Log Out", padx=4, pady=4, font=self.buttonFont, command=lambda: controller.show_frame(StartPage))
+        menu6 = tk.Button(self, text="Back Home", padx=4, pady=4, font=self.buttonFont, command=lambda: controller.show_frame(MainStudentPage))
         menu6.grid(row=0, column=6)
+        menu7 = tk.Button(self, text="Log Out", padx=4, pady=4, font=self.buttonFont, command=lambda: controller.show_frame(StartPage))
+        menu7.grid(row=0, column=7)
         #=====================================
 
         label = tk.Label(self, text=lesson_data['Lessons'][1]['Lesson Title'], font=self.headFont)
@@ -53,8 +55,8 @@ class ViewLesson2(tk.Frame):
         text.insert(tk.INSERT, lesson_data['Lessons'][1]['Lesson Content'])
 
         text.config(state=tk.DISABLED)
-        text.grid(row=2, columnspan=7)
+        text.grid(row=2, columnspan=8)
 
         # Go to take test
         button1 = tk.Button(self, text="Continue and take test on sets", font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(TakeTest2))
-        button1.grid(row=3, columnspan=7)
+        button1.grid(row=3, columnspan=8)
