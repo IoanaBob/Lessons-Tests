@@ -62,16 +62,7 @@ class EditLesson1(tk.Frame):
         button2.grid(row=4)
 
         def save_changes():
-            # with open('lessons.json', 'r+') as outfile:
-            #     data = json.load(outfile)
-            #     # for i in range(len(obj)):
-            #     data['Lessons'][0]['Lesson Content'] = text.get("1.0", 'end-1c')
-            #     json.dump(data, outfile)
-            # print(text.get("1.0", 'end-1c'))
-            # lesson_data['Lessons'][1]['Lesson Content']
-            # print(lesson_data)
             lesson_data['Lessons'][0]['Lesson Content'] = text.get("1.0", 'end-1c')
 
-            # print(lesson_data)
             with open(u"lessons.json", 'w') as f:
                 f.write(json.dumps(lesson_data))
