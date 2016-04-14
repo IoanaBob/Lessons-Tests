@@ -14,38 +14,39 @@ class MyGrades(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        
+
         self.headFont = font.Font(family="Helvetica Neue Light", weight="normal", size=30)
         self.titleFont = font.Font(family="Helvetica Neue Light", weight="normal", size=20)
-        self.buttonFont = font.Font(family="Helvetica Neue Light", weight="normal", size=18)        
+        self.buttonFont = font.Font(family="Helvetica Neue Light", weight="normal", size=18)
+
         label = tk.Label(self, text="My Grades", font=self.headFont, padx=10, pady=10)
-        label.grid(row=0, column=1)
-        
-        
+        label.grid(row=0, column=0, columnspan=2)
+
+
         from StartPage import StartPage
 
-        button1 = tk.Button(self, text="Back to Home", font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(StartPage))
+        button1 = tk.Button(self, text="Back to Home", font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(MainStudentPage))
 
-        button1.grid(row=0, column=0)          
-        
-        
-        
+        button1.grid(row=3, column=0)
+
+
+
         enter_username_button = tk.Button(self, text="Generate Grades", font=self.buttonFont, padx=4, pady=4, command=lambda: self.stats(controller))
         enter_username_button.grid(row=3, column=1)
 
 
-        
+
     def stats(self, controller):
-        
+
 
         with open('results.json') as data:
             json_decode = json.load(data)
-        
+
         def test1results(controller, jsonfile):
             for i in json_decode:
                 if i == current_user["username"]:
                     test1data = json_decode[i]['1']
-                    
+
                     amountofscores = len(test1data)
                     sumofscores = sum(test1data)
                     if amountofscores == 0 or sumofscores == 0:
@@ -53,9 +54,9 @@ class MyGrades(tk.Frame):
                     else:
                         averagescore= sum(test1data)/len(test1data)
                     topscore = max(test1data)
-            
+
             return "\nScores for Test 1:", test1data, "\nAverage Score for Test 1:",averagescore,"\nTop Score for Test 1:",topscore
-        
+
         def test2results(controller, jsonfile):
             for i in json_decode:
                 if i == current_user["username"]:
@@ -67,22 +68,22 @@ class MyGrades(tk.Frame):
                         averagescore = "Can't divide by 0!"
                     else:
                         averagescore= sum(test2data)/len(test2data)
-                    topscore = max(test2data)            
-                       
+                    topscore = max(test2data)
+
             return "\n\nScores for Test 2:", test2data, "\nAverage Score for Test 2:",averagescore,"\nTop Score for Test 2:",topscore
-            
+
         def bothresults(controller, jsonfile):
             test1results(controller, jsonfile)
             test2results(controller, jsonfile)
-            
-        
+
+
         text = tk.Text(self)
         text.insert(tk.INSERT, test1results(controller, json_decode))
         text.insert(tk.INSERT, test2results(controller, json_decode))
-        text.grid(row=5, column=1)
-            
-        
-        
+        text.grid(row=4, column=0, columnspan=10, sticky="W")
+
+
+
         # moved all the other page imports, makes it more clear and it works in any case.
         # add more here, too, if you need to.
   #  from ViewLesson1 import ViewLesson1
@@ -90,7 +91,7 @@ class MyGrades(tk.Frame):
  #   from TakeTest1 import TakeTest1
  #   from TakeTest2 import TakeTest2
  #   from StartPage import StartPage
- #   
+ #
     #=====================================
     # MENU STARTS HERE
     # TODO: make buttons stay one near each other (not depending on the other columns)
