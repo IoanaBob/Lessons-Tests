@@ -16,7 +16,7 @@ class EditTest1(tk.Frame):
         from Statistics import Statistics
         from StartPage import StartPage
         #=====================================
-        from EditTest1page0 import EditTest1Page0
+        from EditTest1Page0 import EditTest1Page0
         #=====================================
 
         self.headFont = font.Font(family="Helvetica Neue Light", weight="normal", size=30)

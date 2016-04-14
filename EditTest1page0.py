@@ -36,20 +36,33 @@ class EditTest1Page0(tk.Frame):
         menu6 = tk.Button(self, text="Log Out", command=lambda: controller.show_frame(StartPage))
         menu6.grid(row=0, column=5)
         #=====================================
+        # 2nd menu
+        q0 = tk.Button(self, text="Question 1", command=lambda: controller.show_frame(EditTest1Page0))
+        q0.grid(row=1, column=0)
+        q1 = tk.Button(self, text="Question 2", command=lambda: controller.show_frame(EditTest1Page0))
+        q1.grid(row=1, column=1)
+        q2 = tk.Button(self, text="Question 3", command=lambda: controller.show_frame(EditTest1Page0))
+        q2.grid(row=1, column=2)
+        q3 = tk.Button(self, text="Question 4", command=lambda: controller.show_frame(EditTest1Page0))
+        q3.grid(row=1, column=3)
+        q4 = tk.Button(self, text="Question 5", command=lambda: controller.show_frame(EditTest1Page0))
+        q4.grid(row=1, column=4)
+        q5 = tk.Button(self, text="Question 6", command=lambda: controller.show_frame(EditTest1Page0))
+        q5.grid(row=1, column=5)
+        q6 = tk.Button(self, text="Question 7", command=lambda: controller.show_frame(EditTest1Page0))
+        q6.grid(row=1, column=6)
+        # =====================================
 
         label = tk.Label(self, text="Modify sets test", font=LARGE_FONT)
-        label.grid(row=1)
+        label.grid(row=2)
 
         text = tk.Text(self)
         text.insert(tk.INSERT, questions["Questions"][0])
-        text.grid(row=2)
+        text.grid(row=3)
 
         save_button = tk.Button(self, text="Save Changes", command=lambda: save_changes() )
-        save_button.grid(row=3)
+        save_button.grid(row=4)
 
-        # Next Question
-        button1 = tk.Button(self, text="Edit test", command=lambda: controller.show_frame(EditTest1Page0))
-        button1.grid(row=4)
 
         def save_changes():
             questions["Questions"][0] = text.get("1.0", 'end-1c')
