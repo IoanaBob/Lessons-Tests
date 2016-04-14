@@ -30,6 +30,7 @@ class Statistics(tk.Frame):
 
     def stats(self, username_stats):
 
+        global username_stats
         username_stats = self.e1.get()
 
         with open('results.json', encoding="utf-8") as data:
@@ -114,3 +115,4 @@ class Statistics(tk.Frame):
 
         label = tk.Label(self, text="MUST BE FINISHED", font=LARGE_FONT)
         label.grid(row=1)
+        #comment
