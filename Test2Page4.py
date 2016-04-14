@@ -6,13 +6,13 @@ from tkinter import font
 
 LARGE_FONT= ("Verdana", 12)
 
-with open('questions.json') as data_file:
+with open('questions2.json') as data_file:
     test_data = json.load(data_file)
 
-class TestPage2(tk.Frame):
+class Test2Page4(tk.Frame):
 
     def __init__(self, parent, controller):
-        from TestPage3 import TestPage3
+        from Test2Page5 import Test2Page5
 
         self.headFont = font.Font(family="Helvetica Neue Light", weight="normal", size=30)
         self.titleFont = font.Font(family="Helvetica Neue Light", weight="normal", size=20)
@@ -25,31 +25,31 @@ class TestPage2(tk.Frame):
                 data = json.load(json_data)
             current_score = int(data["score"])
 
-            if var.get() == test_data['Questions'][2]['Question Content'][param]['Correct Answer']:
+            if var.get() == test_data['Questions'][4]['Question Content'][param]['Correct Answer']:
                 current_score += 1
 
-            data = {"topic": 1, "score": current_score}
+            data = {"topic": 2, "score": current_score}
             with open('current_score.json', 'w') as json_data:
                 json.dump(data, json_data)
 
 
         def combine_funcs(param):
             add_to_score(param)
-            controller.refresh_frame(TestPage3)
-            controller.show_frame(TestPage3)
+            controller.refresh_frame(Test2Page5)
+            controller.show_frame(Test2Page5)
 
 
 
         tk.Frame.__init__(self, parent)
 
-        param = randint(0,len(test_data['Questions'][2]['Question Content'])-1)
+        param = randint(0,len(test_data['Questions'][4]['Question Content'])-1)
 
-        question = test_data['Questions'][2]['Question Header'] + test_data['Questions'][2]['Question Content'][param]['Question']
+        question = test_data['Questions'][4]['Question Header'] + test_data['Questions'][4]['Question Content'][param]['Question']
         label = tk.Label(self, text=question, font=self.titleFont, padx=4, pady=4)
         label.grid(row=1, sticky="W", columnspan=20)
         label.configure(background = 'white')
 
-        answers = test_data['Questions'][2]['Question Content'][param]['Answers']
+        answers = test_data['Questions'][4]['Question Content'][param]['Answers']
         j = 0
         var = StringVar()
         for answer in set(answers):

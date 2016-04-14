@@ -21,6 +21,13 @@ from TestPage3 import TestPage3
 from TestPage4 import TestPage4
 from TestPage5 import TestPage5
 from TestPage6 import TestPage6
+from Test2Page0 import Test2Page0
+from Test2Page1 import Test2Page1
+from Test2Page2 import Test2Page2
+from Test2Page3 import Test2Page3
+from Test2Page4 import Test2Page4
+from Test2Page5 import Test2Page5
+from Test2Page6 import Test2Page6
 
 
 from EditTest1Page0 import EditTest1Page0
@@ -46,8 +53,13 @@ class main(tk.Tk):
 
         for F in (StartPage, StudentLogin, TeacherLogin, MainStudentPage, MainTeacherPage, ViewLesson1, ViewLesson2, 
             EditLesson1, EditLesson2, TakeTest1, TakeTest2, EditTest1, EditTest2, MyGrades, 
+<<<<<<< HEAD
             Statistics, TestPage1, TestPage0, TestPage2, TestPage3, TestPage4, TestPage5, TestPage6,
             EditTest1Page0):
+=======
+            Statistics, TestPage1, TestPage0, TestPage2, TestPage3, TestPage4, TestPage5, TestPage6,Test2Page0, Test2Page1,Test2Page2,Test2Page3, Test2Page4,
+            Test2Page5,Test2Page6):
+>>>>>>> 8e4ed2fb43b1eaa11ac5b00020f6b2e998af5076
 
             frame = F(self.container, self)
 
