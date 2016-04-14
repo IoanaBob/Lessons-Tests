@@ -20,10 +20,14 @@ class TakeTest1(tk.Frame):
         from StartPage import StartPage
         from MainStudentPage import MainStudentPage
         from MyGrades import MyGrades
+<<<<<<< HEAD
 
         from TestPage1 import TestPage1
 
 
+=======
+        from TestPage0 import TestPage0
+>>>>>>> 40da6e4f084e37f0efc9dd15600fcb199262eeea
         #=====================================
         # Menu
         # TODO: make buttons stay one near each other (not depending on the other columns)
@@ -42,12 +46,12 @@ class TakeTest1(tk.Frame):
         #=====================================
 
 
-        label = tk.Label(self, text="Display Quesions", font=LARGE_FONT)
+        label = tk.Label(self, text="Are you ready to take the test?", font=LARGE_FONT)
         label.grid(row=1)
 
 
-        menu6 = tk.Button(self, text="Take Test 1", command=lambda: controller.show_frame(TestPage1))
-        menu6.grid(row=2, column=5)
+       # menu6 = tk.Button(self, text="Take Test 1", command=lambda: controller.show_frame(TestPage1))
+       # menu6.grid(row=2, column=5)
         #=====================================
         # label = tk.Label(self, text=test_data['Questions'][index]['Question Header'], font=LARGE_FONT)
         # label.grid(row=0)
@@ -79,12 +83,12 @@ class TakeTest1(tk.Frame):
 
 
 
-        for i in range(0, len(test_data['Questions'])):
-            label = tk.Label(self, text=test_data['Questions'][i]['Question Topic'])
-            label.grid(row=i+4)
-            concat_text = test_data['Questions'][i]['Question Header'] + test_data['Questions'][i]['Question Content'][0]['Question']
-            label = tk.Label(self, text=concat_text)
-            label.grid(row=i+8)
+       # for i in range(0, len(test_data['Questions'])):
+           # label = tk.Label(self, text=test_data['Questions'][i]['Question Topic'])
+           # label.grid(row=i+4)
+           # concat_text = test_data['Questions'][i]['Question Header'] + test_data['Questions'][i]['Question Content'][0]['Question']
+           # label = tk.Label(self, text=concat_text)
+           # label.grid(row=i+8)
 
             # fix this
 
@@ -105,9 +109,6 @@ class TakeTest1(tk.Frame):
         #
         #
 
+        menu6 = tk.Button(self, text="Take Test 1", command=lambda: controller.show_frame(TestPage0))
+        menu6.grid(row=2, column=5)
 
-
-
-
-        R1 = tk.Radiobutton(self, text="option 1", font=LARGE_FONT, indicatoron=0)
-        R1.grid(row=2)
