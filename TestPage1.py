@@ -58,6 +58,6 @@ class TestPage1(tk.Frame):
             radio.grid(row=2, column=j)
             j += 1
 
-        next = tk.Button(self, text="Next question", padx=4, pady=4, font=self.buttonFont, command=lambda:combine_funcs(param))
+        next = tk.Button(self, text="Next question", borderwidth = 4, padx=4, pady=4, font=self.buttonFont, command=lambda:combine_funcs(param))
         next.grid(row=3, column=0, sticky="W", columnspan=20)
         next.configure(background = '#FF8800')
