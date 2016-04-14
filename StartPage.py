@@ -15,9 +15,12 @@ class StartPage(tk.Frame):
         
         label = tk.Label(self, text="Welcome to the Portal", font=self.headFont)
         label.pack(pady=10,padx=10)
+        label.configure(background='white')
 
         button = tk.Button(self, text="I am a Student", font=self.titleFont, padx=5, pady=5, command=lambda: controller.show_frame(StudentLogin))
+        button.configure(background = '#FF8800')
         button.pack()
 
         button2 = tk.Button(self, text="I am a Professor", font=self.titleFont, padx=5, pady=5, command=lambda: controller.show_frame(TeacherLogin))
+        button2.configure(background = '#FF8800')
         button2.pack()
