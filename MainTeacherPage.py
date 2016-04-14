@@ -38,6 +38,8 @@ class MainTeacherPage(tk.Frame):
         menu5.grid(row=3, column=0, columnspan=2)
         menu6 = tk.Button(self, text="Log Out", width=17, padx=4, pady=4, font=self.buttonFont, command=lambda: controller.show_frame(StartPage))
         menu6.grid(row=5, column=0, columnspan=2)
+        menu7 = tk.Button(self, text="View Student Statistics", width=20, font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(Statistics))
+        menu7.grid(row=6, column=0, columnspan=2)
         #=====================================
 
         label = tk.Label(self, text="Welcome back.", font=self.headFont)
