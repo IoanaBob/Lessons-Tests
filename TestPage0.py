@@ -28,7 +28,7 @@ class TestPage0(tk.Frame):
             global total_score
             if var.get() == test_data['Questions'][0]['Question Content'][param]['Correct Answer']:
                 total_score += 1
-        
+
         def combine_funcs(param):
             add_to_score(param)
             print(total_score)
@@ -38,13 +38,10 @@ class TestPage0(tk.Frame):
 
         tk.Frame.__init__(self, parent)
 
-        
-        label = tk.Label(self, text=test_data['Questions'][0]['Question Header'], font=LARGE_FONT)
-        label.grid(row=0)
-
         param = randint(0,len(test_data['Questions'][0]['Question Content'])-1)
 
-        label = tk.Label(self, text=test_data['Questions'][0]['Question Content'][param]['Question'], font=LARGE_FONT)
+        question = test_data['Questions'][0]['Question Header'] + test_data['Questions'][0]['Question Content'][param]['Question']
+        label = tk.Label(self, text=question, font=LARGE_FONT)
         label.grid(row=1)
 
         answers = test_data['Questions'][0]['Question Content'][param]['Answers']
@@ -57,6 +54,3 @@ class TestPage0(tk.Frame):
 
         next = tk.Button(self, text="Next question", command=lambda:combine_funcs(param))
         next.grid(row=3, column=0)
-
-    
-

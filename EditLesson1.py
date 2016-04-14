@@ -4,7 +4,7 @@ from TakeTest1 import TakeTest1
 
 LARGE_FONT= ("Verdana", 12)
 
-with open('lessons.json') as data_file:
+with open('lessons.json', 'r') as data_file:
     lesson_data = json.load(data_file)
 
 class EditLesson1(tk.Frame):
@@ -43,19 +43,35 @@ class EditLesson1(tk.Frame):
 
         text = tk.Text(self)
         text.insert(tk.INSERT, lesson_data['Lessons'][0]['Lesson Content'])
-
-
         text.grid(row=2)
         # =================================
         # TODO - when modified, the new text in the textbox is saved in te JSON
         # A SAVE BUTTON IS NEEDED HERE
         # =================================
 
-        # Go to edit test
-        button1 = tk.Button(self, text="Edit test", command=lambda: controller.show_frame(TakeTest1))
+
+        save_button = tk.Button(self, text="Save Changes", command=lambda: save_changes() )
+        save_button.grid(row=1)
+
+        # Edit Test
+        button1 = tk.Button(self, text="Edit test", command=lambda: controller.show_frame(EditTest1))
         button1.grid(row=3)
 
         # back to lessons
-        button2 = tk.Button(self, text="Back to Lessons",
-                            command=lambda: controller.show_frame(MainTeacherPage))
+        button2 = tk.Button(self, text="Back to Lessons", command=lambda: controller.show_frame(MainTeacherPage))
         button2.grid(row=4)
+
+        def save_changes():
+            # with open('lessons.json', 'r+') as outfile:
+            #     data = json.load(outfile)
+            #     # for i in range(len(obj)):
+            #     data['Lessons'][0]['Lesson Content'] = text.get("1.0", 'end-1c')
+            #     json.dump(data, outfile)
+            # print(text.get("1.0", 'end-1c'))
+            # lesson_data['Lessons'][1]['Lesson Content']
+            # print(lesson_data)
+            lesson_data['Lessons'][0]['Lesson Content'] = text.get("1.0", 'end-1c')
+
+            # print(lesson_data)
+            with open(u"lessons.json", 'w') as f:
+                f.write(json.dumps(lesson_data))

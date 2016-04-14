@@ -10,7 +10,7 @@ with open('questions.json') as data_file:
 class TestPage1(tk.Frame):
 
     def __init__(self, parent, controller):
-        
+
         tk.Frame.__init__(self, parent)
 
         from MyGrades import MyGrades
@@ -32,4 +32,3 @@ class TestPage1(tk.Frame):
 
         next = tk.Button(self, text="Done", command=lambda: controller.show_frame(MyGrades))
         next.grid(row=3, column=0)
-

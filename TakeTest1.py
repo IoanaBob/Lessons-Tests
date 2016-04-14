@@ -20,14 +20,9 @@ class TakeTest1(tk.Frame):
         from StartPage import StartPage
         from MainStudentPage import MainStudentPage
         from MyGrades import MyGrades
-<<<<<<< HEAD
 
-        from TestPage1 import TestPage1
-
-
-=======
+       # from TestPage1 import TestPage1
         from TestPage0 import TestPage0
->>>>>>> 40da6e4f084e37f0efc9dd15600fcb199262eeea
         #=====================================
         # Menu
         # TODO: make buttons stay one near each other (not depending on the other columns)

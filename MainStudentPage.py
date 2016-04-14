@@ -8,7 +8,7 @@ class MainStudentPage(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        
+
         # moved all the other page imports, makes it more clear and it works in any case.
         # add more here, too, if you need to.
         from ViewLesson1 import ViewLesson1
