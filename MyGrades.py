@@ -4,8 +4,9 @@ from MainStudentPage import *
 import tkinter.messagebox as tm
 import ast
 import json
+from tkinter import font
 
-LARGE_FONT= ("Verdana", 12)
+LARGE_FONT= ("Verdana", 20)
 
 with open('current_user.json') as data_file:
     current_user = json.load(data_file)
@@ -21,6 +22,7 @@ class MyGrades(tk.Frame):
 
         label = tk.Label(self, text="My Grades", font=self.headFont, padx=10, pady=10)
         label.grid(row=0, column=0, columnspan=2)
+        label.configure(background = 'white')
 
 
         from StartPage import StartPage
@@ -28,11 +30,13 @@ class MyGrades(tk.Frame):
         button1 = tk.Button(self, text="Back to Home", font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(MainStudentPage))
 
         button1.grid(row=3, column=0)
+        button1.configure(background = '#FF8800')
 
 
 
         enter_username_button = tk.Button(self, text="Generate Grades", font=self.buttonFont, padx=4, pady=4, command=lambda: self.stats(controller))
         enter_username_button.grid(row=3, column=1)
+        enter_username_button.configure(background = '#FF8800')
 
 
 
