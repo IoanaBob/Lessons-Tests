@@ -18,7 +18,6 @@ class EditLesson2(tk.Frame):
         self.buttonFont = font.Font(family="Helvetica Neue Light", weight="normal", size=18)
         self.textFont = font.Font(family="Helvetica Neue Light", weight="normal", size=12)
 
-
         # moved all the other page imports, makes it more clear and it works in any case.
         # add more here, too, if you need to.
         from EditLesson1 import EditLesson1
