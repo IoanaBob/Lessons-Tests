@@ -5,23 +5,15 @@ import tkinter.messagebox as tm
 import ast
 import json
 
-
-
-
 LARGE_FONT= ("Verdana", 12)
-
 
 with open('current_user.json') as data_file:
     current_user = json.load(data_file)
+
 class MyGrades(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        
-        tk.Frame.__init__(self, parent)
-        
-              
-        
         
         self.headFont = font.Font(family="Helvetica Neue Light", weight="normal", size=30)
         self.titleFont = font.Font(family="Helvetica Neue Light", weight="normal", size=20)
@@ -40,6 +32,8 @@ class MyGrades(tk.Frame):
         
         enter_username_button = tk.Button(self, text="Generate Grades", font=self.buttonFont, padx=4, pady=4, command=lambda: self.stats(controller))
         enter_username_button.grid(row=3, column=1)
+
+
         
     def stats(self, controller):
         
@@ -49,7 +43,7 @@ class MyGrades(tk.Frame):
         
         def test1results(controller, jsonfile):
             for i in json_decode:
-                if i == "username":
+                if i == current_user["username"]:
                     test1data = json_decode[i]['1']
                     
                     amountofscores = len(test1data)
@@ -64,7 +58,7 @@ class MyGrades(tk.Frame):
         
         def test2results(controller, jsonfile):
             for i in json_decode:
-                if i == "username":
+                if i == current_user["username"]:
                     test2data = json_decode[i]['2']
                     #test2data = ast.literal_eval(test2data)
                     amountofscores = len(test2data)

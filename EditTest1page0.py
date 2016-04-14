@@ -1,4 +1,9 @@
 import tkinter as tk
+import json
+from tkinter import font
+
+with open('questions.json', encoding="utf-8") as data_file:
+    test_data = json.load(data_file)
 LARGE_FONT= ("Verdana", 12)
 
 class EditTest1(tk.Frame):
@@ -14,8 +19,6 @@ class EditTest1(tk.Frame):
         from EditTest2 import EditTest2
         from Statistics import Statistics
         from StartPage import StartPage
-        #=====================================
-        from EditTest1Page0 import EditTest1Page0
         #=====================================
         # MENU STARTS HERE
         # TODO: make buttons stay one near each other (not depending on the other columns)
@@ -33,17 +36,5 @@ class EditTest1(tk.Frame):
         menu6.grid(row=0, column=5)
         #=====================================
 
-        q0 = tk.Button(self, text="Question 1", command=lambda: controller.show_frame(EditTest1Page0))
-        q0.grid(row=1, column=0)
-        q1 = tk.Button(self, text="Question 2", command=lambda: controller.show_frame(EditTest1Page0))
-        q1.grid(row=1, column=1)
-        q2 = tk.Button(self, text="Question 3", command=lambda: controller.show_frame(EditTest1Page0))
-        q2.grid(row=1, column=2)
-        q3 = tk.Button(self, text="Question 4", command=lambda: controller.show_frame(EditTest1Page0))
-        q3.grid(row=1, column=3)
-        q4 = tk.Button(self, text="Question 5", command=lambda: controller.show_frame(EditTest1Page0))
-        q4.grid(row=1, column=4)
-        q5 = tk.Button(self, text="Question 6", command=lambda: controller.show_frame(EditTest1Page0))
-        q5.grid(row=1, column=5)
-        q6 = tk.Button(self, text="Question 7", command=lambda: controller.show_frame(EditTest1Page0))
-        q6.grid(row=1, column=6)
+        label = tk.Label(self, text="MUST BE FINISHED - MUST HAVE A LOOP GOING THROUGH QUESTIONS ", font=LARGE_FONT)
+        label.grid(row=1)
