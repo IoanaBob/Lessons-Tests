@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import StringVar
 import json
 from random import randint
+from tkinter import font
 
 LARGE_FONT= ("Verdana", 12)
 
@@ -12,6 +13,11 @@ class TestPage4(tk.Frame):
 
     def __init__(self, parent, controller):
         from TestPage5 import TestPage5
+
+        self.headFont = font.Font(family="Helvetica Neue Light", weight="normal", size=30)
+        self.titleFont = font.Font(family="Helvetica Neue Light", weight="normal", size=20)
+        self.buttonFont = font.Font(family="Helvetica Neue Light", weight="normal", size=18)
+        self.textFont = font.Font(family="Helvetica Neue Light", weight="normal", size=12)
 
         def add_to_score(param):
 
@@ -39,8 +45,8 @@ class TestPage4(tk.Frame):
         param = randint(0,len(test_data['Questions'][4]['Question Content'])-1)
 
         question = test_data['Questions'][4]['Question Header'] + test_data['Questions'][4]['Question Content'][param]['Question']
-        label = tk.Label(self, text=question, font=LARGE_FONT)
-        label.grid(row=1)
+        label = tk.Label(self, text=question, font=self.titleFont, padx=4, pady=4)
+        label.grid(row=1, sticky="W", columnspan=20)
 
         answers = test_data['Questions'][4]['Question Content'][param]['Answers']
         j = 0
@@ -50,5 +56,5 @@ class TestPage4(tk.Frame):
             radio.grid(row=2, column=j)
             j += 1
 
-        next = tk.Button(self, text="Next question", command=lambda:combine_funcs(param))
-        next.grid(row=3, column=0)
+        next = tk.Button(self, text="Next question", padx=4, pady=4, font=self.buttonFont, command=lambda:combine_funcs(param))
+        next.grid(row=3, column=0, sticky="W", columnspan=20)
