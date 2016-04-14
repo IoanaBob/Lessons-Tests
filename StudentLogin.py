@@ -3,7 +3,7 @@ from MainStudentPage import *
 import tkinter.messagebox as tm
 import json
 
-
+username = ""
 LARGE_FONT= ("Verdana", 12)
 
 class StudentLogin(tk.Frame):
@@ -42,6 +42,7 @@ class StudentLogin(tk.Frame):
     def login(self, controller):
         global username
         username = self.e1.get()
+        print(username)
         password = self.e2.get()
 
         with open('users.json') as data_file:

@@ -3,6 +3,8 @@ import StudentLogin
 from tkinter import font
 
 LARGE_FONT= ("Verdana", 12)
+def print_user(self, controller):
+    print(StudentLogin.username)
 
 class MainStudentPage(tk.Frame):
 
@@ -38,10 +40,12 @@ class MainStudentPage(tk.Frame):
         menu5.grid(row=6, column=0, columnspan=2)
         menu6 = tk.Button(self, text="Log Out", font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(StartPage))
         menu6.grid(row=8, column=0, columnspan=2)
+        menu6 = tk.Button(self, text="Get User Name", font=self.buttonFont, padx=4, pady=4, command=lambda: print_user(self, controller))
+        menu6.grid(row=9, column=0, columnspan=2)
         #=====================================
 
-        #welcome_message = "Welcome back " + str(StudentLogin.username) + "!"
-        label = tk.Label(self, text="Welcome back [enter user name]!", font=self.headFont, padx=15, pady=5)
+        welcome_message = "Welcome back " + str(StudentLogin.username) + "!"
+        label = tk.Label(self, text=welcome_message, font=self.headFont, padx=15, pady=5)
         label2 = tk.Label(self, text="Click on a button below.", font=self.titleFont, padx=5)
         blank_space = tk.Label(self, text="", font=LARGE_FONT)
         label.grid(row=0, columnspan=2)
