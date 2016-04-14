@@ -26,7 +26,7 @@ class TestPage0(tk.Frame):
             current_score = int(data["score"])
 
             if var.get() == test_data['Questions'][0]['Question Content'][param]['Correct Answer']:
-                current_score += 1§
+                current_score += 1
 
             data = {"topic": 1, "score": current_score}
             with open('current_score.json', 'w') as json_data:
