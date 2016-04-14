@@ -47,7 +47,6 @@ class Test2Page3(tk.Frame):
         question = test_data['Questions'][3]['Question Header'] + test_data['Questions'][3]['Question Content'][param]['Question']
         label = tk.Label(self, text=question, font=self.titleFont, padx=4, pady=4)
         label.grid(row=1, sticky="W", columnspan=20)
-
         label.configure(background = 'white')
 
         answers = test_data['Questions'][3]['Question Content'][param]['Answers']
