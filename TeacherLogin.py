@@ -38,8 +38,9 @@ class TeacherLogin(tk.Frame):
         ####################################
         # login button - goes to the lessons
         log_in_button = tk.Button(self, text="Log in", font=self.buttonFont, padx=4, pady=4, command=lambda: self.login(controller))
-        log_in_button.grid(row=3, column=1)
         log_in_button.configure(background = '#FF8800')
+        log_in_button.grid(row=3, column=1)
+
 
         button1 = tk.Button(self, text="Back to Home",relief = tk.RIDGE, borderwidth = 4, font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(StartPage))
 
