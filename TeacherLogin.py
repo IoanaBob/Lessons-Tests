@@ -44,7 +44,7 @@ class TeacherLogin(tk.Frame):
         username = self.e1.get()
         password = self.e2.get()
 
-        with open('users.json') as data_file:
+        with open('users.json', encoding="utf-8") as data_file:
             user_data = json.load(data_file)
         try:
             user_data['Teachers'][username]

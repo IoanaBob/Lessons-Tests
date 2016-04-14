@@ -4,7 +4,7 @@ from TakeTest2 import TakeTest2
 from tkinter import font
 LARGE_FONT= ("Verdana", 12)
 
-with open('lessons.json') as data_file:
+with open('lessons.json', encoding="utf-8") as data_file:
     lesson_data = json.load(data_file)
 
 class ViewLesson2(tk.Frame):
