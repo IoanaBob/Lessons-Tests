@@ -44,8 +44,6 @@ class MainStudentPage(tk.Frame):
         menu6.grid(row=8, column=0, columnspan=2)
         menu7 = tk.Button(self, text="Get User Name", font=self.buttonFont, padx=4, pady=4, command=lambda: print(get_user(self, controller)))
         menu7.grid(row=9, column=0, columnspan=2)
-        # menu8 = tk.Button(self, text="Get User Name", font=self.buttonFont, padx=4, pady=4, command=lambda: print(get_user(self, controller)))
-        # menu8.grid(row=10, column=0, columnspan=2)
         #=====================================
 
         username = ""
