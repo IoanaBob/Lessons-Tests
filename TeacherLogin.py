@@ -37,7 +37,12 @@ class TeacherLogin(tk.Frame):
         self.e2.grid(row=2, column=1)
         ####################################
         # login button - goes to the lessons
+        # it was a conflict so i commented one of them
+        #log_in_button = tk.Button(self, text="Log in", borderwidth = 4, font=self.buttonFont, padx=4, pady=4, command=lambda: self.login(controller))
+        #log_in_button.grid(row=3, column=1)
+
         log_in_button = tk.Button(self, text="Log in", font=self.buttonFont, padx=4, pady=4, command=lambda: self.login(controller))
+
         log_in_button.configure(background = '#FF8800')
         log_in_button.grid(row=3, column=1)
 

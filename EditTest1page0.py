@@ -36,6 +36,28 @@ class EditTest1Page0(tk.Frame):
         menu6 = tk.Button(self, text="Log Out", command=lambda: controller.show_frame(StartPage))
         menu6.grid(row=0, column=5)
         #=====================================
+
+        label = tk.Label(self, text="Modify sets test", font=LARGE_FONT)
+        label.grid(row=1)
+
+        text = tk.Text(self)
+        text.insert(tk.INSERT, questions["Questions"][0])
+        text.grid(row=2)
+
+        save_button = tk.Button(self, text="Save Changes", command=lambda: save_changes() )
+        save_button.grid(row=3)
+
+        # Next Question
+        button1 = tk.Button(self, text="Edit test", command=lambda: controller.show_frame(EditTest1Page0))
+        button1.grid(row=4)
+
+        def save_changes():
+            questions["Questions"][0] = text.get("1.0", 'end-1c')
+            print(text.get("1.0", 'end-1c'))
+            with open(u"questions.json", 'w', encoding="utf-8") as f:
+                f.write(json.dumps(questions))
+
+        '''
         topicl = tk.Label(self, text="Question Topic", font=LARGE_FONT)
         topicl.grid(row=2, column=0)
 
@@ -58,14 +80,18 @@ class EditTest1Page0(tk.Frame):
         thecontent.grid(row=4, column=0)
 
         j = 5
+        i = 0
+        content = []
         for question in questions['Questions'][0]['Question Content']:
+
             contentl = tk.Label(self, text="Parameter: ", font=LARGE_FONT)
             contentl.grid(row=j, column=0)
-            content = tk.Text(self, height=1, width=40)
-            content.insert(tk.INSERT, question["Question"])
-            content.grid(row=j, column=1)
-            #changing the dict
-            question["Question"] = content.get("1.0", 'end-1c')
+            content.append(tk.Text(self, height=1, width=40))
+            content[i].insert(tk.INSERT, question["Question"])
+            content[i].grid(row=j, column=1)
+            content_button = tk.Button(self, text="Save", command=lambda: save_content(content,question,questions) )
+            content_button.grid(row=j, column=2)
+
 
             canswerl = tk.Label(self, text="Correct answer:", font=LARGE_FONT)
             canswerl.grid(row=j+1, column=0)
@@ -87,15 +113,22 @@ class EditTest1Page0(tk.Frame):
                 answer = the_answer.get("1.0", 'end-1c')
                 k += 1
             j += 4
+            i += 1
 
         save_button = tk.Button(self, text="Save Changes", command=lambda: save_changes() )
         save_button.grid(row=j)
 
-        def save_changes():
-            with open(u"questions.json", 'w', encoding="utf-8") as json_data:
-                json.dump(questions, json_data)
-
-
+        def save_content(content, questioni, questions):
+            for question in questions['Questions'][0]['Question Content']:
+                #changing the dict
+                if questioni == question:
+                    print(question)
+                    print(questioni)
+                    print(content.get("1.0", 'end-1c'))
+                    question["Question"] = content.get("1.0", 'end-1c')
+                    with open(u"questions.json", 'w', encoding="utf-8") as json_data:
+                        json.dump(questions, json_data)
+        '''
 
 
 
