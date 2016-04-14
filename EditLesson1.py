@@ -12,7 +12,7 @@ class EditLesson1(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        
+
         self.headFont = font.Font(family="Helvetica Neue Light", weight="normal", size=30)
         self.titleFont = font.Font(family="Helvetica Neue Light", weight="normal", size=20)
         self.buttonFont = font.Font(family="Helvetica Neue Light", weight="normal", size=18)
@@ -47,8 +47,11 @@ class EditLesson1(tk.Frame):
         menu5.grid(row=0, column=4)
         menu5.configure(background = '#FF8800')
         menu6 = tk.Button(self, text="Log Out",  padx=4, pady=4, font=self.buttonFont, command=lambda: controller.show_frame(StartPage))
-        menu6.grid(row=0, column=5)
+        menu6.grid(row=0, column=6)
         menu6.configure(background = '#FF8800')
+        menu7 = tk.Button(self, text="Back Home",  padx=4, pady=4, font=self.buttonFont, command=lambda: controller.show_frame(MainTeacherPage))
+        menu7.grid(row=0, column=5)
+        menu7.configure(background = '#FF8800')
         #=====================================
 
         label = tk.Label(self, text=lesson_data['Lessons'][0]['Lesson Title'], font=LARGE_FONT)
@@ -57,21 +60,16 @@ class EditLesson1(tk.Frame):
 
         text = tk.Text(self)
         text.insert(tk.INSERT, lesson_data['Lessons'][0]['Lesson Content'])
-        text.grid(row=3)
+        text.grid(row=3, column=0, columnspan=20, sticky="W")
 
-        save_button = tk.Button(self, text="Save Changes", command=lambda: save_changes() )
-        save_button.grid(row=2)
+        save_button = tk.Button(self, text="Save Changes", font=self.buttonFont, padx=4, pady=4, command=lambda: save_changes() )
+        save_button.grid(row=4, column=0)
 
 
         # Edit Test
-        button1 = tk.Button(self, text="Edit test", borderwidth = 4, command=lambda: controller.show_frame(EditTest1))
-        button1.grid(row=4)
+        button1 = tk.Button(self, text="Edit test", font=self.buttonFont, padx=4, pady=4, borderwidth = 4, command=lambda: controller.show_frame(EditTest1))
+        button1.grid(row=4, column=1)
         button1.configure(background = '#FF8800')
-
-        # back to lessons
-        button2 = tk.Button(self, text="Back to Lessons", borderwidth = 4, command=lambda: controller.show_frame(MainTeacherPage))
-        button2.grid(row=5)
-        button2.configure(background = '#FF8800')
 
         def save_changes():
             lesson_data['Lessons'][0]['Lesson Content'] = text.get("1.0", 'end-1c')
