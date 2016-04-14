@@ -33,10 +33,24 @@ class TestPage6(tk.Frame):
 
         def add_to_results():
             global current_score
+            with open('current_user.json', 'r') as json_data:
+                user = json.load(json_data)
+            current_user = user["username"]
+
+            with open('results.json', 'r') as json_data:
+                results = json.load(json_data)
+            if current_user in results:
+                results[current_user]["1"].append(current_score)
+            else:
+                results[current_user] = {"1":[current_score],"2":[]}
+
+            with open('results.json', 'w') as json_data:
+                json.dump(results, json_data)
 
 
         def combine_funcs(param):
             add_to_score(param)
+            add_to_results()
             controller.refresh_frame(MyGrades)
             controller.show_frame(MyGrades)
 
