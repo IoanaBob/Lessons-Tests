@@ -28,7 +28,7 @@ class Statistics(tk.Frame):
         enter_username_button = tk.Button(self, text="Enter", font=self.buttonFont, padx=4, pady=4, command=lambda: self.stats(username_stats))
         enter_username_button.grid(row=3, column=1)
         
-    def stats(self, username):
+    def stats(self, username_stats):
         
         username_stats = self.e1.get()
 
