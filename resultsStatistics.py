@@ -1,0 +1,45 @@
+import ast
+import json
+
+
+
+with open('results.json', 'r') as data:
+    json_decode = json.load(data)
+
+username = (input("input name:"))
+
+def test1results(username, jsonfile):
+       
+    for test1 in jsonfile:
+        usernames = test1
+        if usernames == username:
+            test1data = json_decode['username']['test1']
+    test1data = ast.literal_eval(test1data)
+    averagescore= sum(test1data)/len(test1data)
+    topscore = max(test1data)
+    print("\nScores for Test 1:", test1data)    
+    print("\nAverage Score for Test 1:",averagescore)
+    print("\nTop Score for Test 1:",topscore)  
+    
+    return test1data
+    
+def test2results(username, jsonfile):
+        
+    for test2 in jsonfile:
+        usernames = test2
+        if usernames == username:
+            test2data = json_decode['username']['test2']
+    test2data = ast.literal_eval(test2data)
+    averagescore= sum(test2data)/len(test2data)
+    topscore = max(test2data)
+    print("\nScores for Test 2:", test2data)    
+    print("\nAverage Score for Test 2:",averagescore)
+    print("\nTop Score for Test 2:",topscore)
+    
+    return test2data
+
+
+    
+test1results(username,json_decode)
+test2results(username,json_decode)
+
