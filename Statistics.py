@@ -29,7 +29,7 @@ class Statistics(tk.Frame):
         enter_username_button.grid(row=3, column=1)
         
     def stats(self, username_stats):
-        
+        global username_stats
         username_stats = self.e1.get()
 
         with open('results.json') as data:
