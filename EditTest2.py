@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import font
 LARGE_FONT= ("Verdana", 12)
 
 class EditTest2(tk.Frame):
@@ -17,6 +18,12 @@ class EditTest2(tk.Frame):
         #=====================================
         # MENU STARTS HERE
         # TODO: make buttons stay one near each other (not depending on the other columns)
+
+        self.headFont = font.Font(family="Helvetica Neue Light", weight="normal", size=30)
+        self.titleFont = font.Font(family="Helvetica Neue Light", weight="normal", size=20)
+        self.buttonFont = font.Font(family="Helvetica Neue Light", weight="normal", size=18)
+        self.textFont = font.Font(family="Helvetica Neue Light", weight="normal", size=12)
+
         menu1 = tk.Button(self, text="Edit Probability Lesson",  padx=4, pady=4, font=self.buttonFont, command=lambda: controller.show_frame(EditLesson1))
         menu1.grid(row=0, column=0)
         menu1.configure(background = '#FF8800')
