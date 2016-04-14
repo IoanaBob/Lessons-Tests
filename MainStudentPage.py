@@ -37,9 +37,9 @@ class MainStudentPage(tk.Frame):
         menu1.grid(row=2, column=0)
         menu2 = tk.Button(self, text="Take Probability Lesson", width=20, font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(ViewLesson1))
         menu2.grid(row=3, column=0)
-        menu3 = tk.Button(self, text="Take Sets Test", width=20, font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(TakeTest1))
+        menu3 = tk.Button(self, text="Take Sets Test", width=20, font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(TakeTest2))
         menu3.grid(row=2, column=1)
-        menu4 = tk.Button(self, text="Take Probability Test", font=self.buttonFont, padx=4, pady=4, width=20, command=lambda: controller.show_frame(TakeTest2))
+        menu4 = tk.Button(self, text="Take Probability Test", font=self.buttonFont, padx=4, pady=4, width=20, command=lambda: controller.show_frame(TakeTest1))
         menu4.grid(row=3, column=1)
         menu5 = tk.Button(self, text="View My Grades", width=20, font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(MyGrades))
         menu5.grid(row=6, column=0, columnspan=2)
@@ -49,17 +49,9 @@ class MainStudentPage(tk.Frame):
         menu7.grid(row=9, column=0, columnspan=2)
         #=====================================
 
-        #welcome_message = "Welcome back " + str(StudentLogin.username) + "!"
         text = "Welcome back " + str(current_user["username"]) + "!"
 
         label = tk.Label(self, text=text, font=self.headFont, padx=15, pady=5)
-
-
-        # with open('users.json') as data_file:
-        #     user_data = json.load(data_file)
-        # for user in user_data["Students"]:
-        #     if get_user(self, controller) == user:
-        #         username = user
 
         label2 = tk.Label(self, text="Click on a button below.", font=self.titleFont, padx=5)
         label2.configure(background = 'white')
@@ -73,6 +65,5 @@ class MainStudentPage(tk.Frame):
         label.grid(row=0, columnspan=2)
         label2.grid(row=1, columnspan=2)
         blank_space.grid(row=7)
-        blank_space1.grid(row=9) 
+        blank_space1.grid(row=9)
         blank_space2.grid(row=11)
-
