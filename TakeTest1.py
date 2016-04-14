@@ -37,12 +37,12 @@ class TakeTest1(tk.Frame):
         menu0.configure(background = '#FF8800')
         menu1 = tk.Button(self, text="Probability Lesson", padx=4, pady=4, font=self.buttonFont, command=lambda: controller.show_frame(ViewLesson1))
         menu1.grid(row=0, column=1)
+        menu1.configure(background = '#FF8800')
         menu2 = tk.Button(self, text="Sets Lesson", padx=4, pady=4, font=self.buttonFont, command=lambda: controller.show_frame(ViewLesson2))
         menu2.grid(row=0, column=2)
         menu2.configure(background = '#FF8800')
         menu3 = tk.Button(self, text="Probability Test", padx=4, pady=4, font=self.buttonFont, command=lambda: controller.show_frame(TakeTest1))
         menu3.grid(row=0, column=3)
-        menu3.configure(background = '#FF8800')
         menu4 = tk.Button(self, text="Sets Test", padx=4, pady=4, font=self.buttonFont, command=lambda: controller.show_frame(TakeTest2))
         menu4.grid(row=0, column=4)
         menu4.configure(background = '#FF8800')
@@ -60,6 +60,7 @@ class TakeTest1(tk.Frame):
 
         label = tk.Label(self, text="Are you ready to take the test?", font=self.titleFont)
         label.grid(row=1, column=0, columnspan=20, sticky="W")
+        label.configure(background = 'white')
 
 
        # menu6 = tk.Button(self, text="Take Test 1", command=lambda: controller.show_frame(TestPage1))
@@ -128,5 +129,5 @@ class TakeTest1(tk.Frame):
         with open('current_score.json', 'w') as json_data:
             json.dump(data, json_data)
 
-        menu6 = tk.Button(self, text="Take Probability Test", font=self.buttonFont, padx=4, pady=4, command=lambda: combine_funcs())
+        menu6 = tk.Button(self, text="Take Probability Test", font=self.buttonFont,relief = tk.RIDGE, borderwidth = 4, padx=4, pady=4, command=lambda: combine_funcs())
         menu6.grid(row=2, column=0, columnspan=20, sticky="W")
