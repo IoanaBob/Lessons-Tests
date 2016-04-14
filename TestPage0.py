@@ -12,26 +12,26 @@ class TestPage0(tk.Frame):
 
     def __init__(self, parent, controller):
         from TestPage1 import TestPage1
-        # ============================================
-        # this variable will store the scores for a test taken by a student
-        global total_score
-        total_score = 0
-        # ============================================
-
-        def sel():
-            if var.get() == 1:
-                selection = "You are right!"
-            else:
-                selection = "You are not right. here is the explanation: \n blablabla"
 
         def add_to_score(param):
-            global total_score
+
+            with open('current_score.json', 'r') as json_data:
+                data = json.load(json_data)
+            current_score = int(data["score"])
+
             if var.get() == test_data['Questions'][0]['Question Content'][param]['Correct Answer']:
-                total_score += 1
+                current_score += 1
+
+            print(current_score)
+
+            data = {"topic": 1, "score": current_score}
+            with open('current_score.json', 'w') as json_data:
+                json.dump(data, json_data)
+
 
         def combine_funcs(param):
             add_to_score(param)
-            print(total_score)
+            controller.refresh_frame(TestPage1)
             controller.show_frame(TestPage1)
 
 

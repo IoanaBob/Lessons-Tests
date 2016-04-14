@@ -1,6 +1,7 @@
 import tkinter as tk
 import StudentLogin
 from tkinter import font
+import json
 
 LARGE_FONT= ("Verdana", 12)
 
@@ -22,6 +23,9 @@ class MainStudentPage(tk.Frame):
         # TODO: make buttons stay one near each other (not depending on the other columns)
         #root.configure(background="alice blue")
 
+        with open('current_user.json') as data_file:
+            current_user = json.load(data_file)
+
         self.headFont = font.Font(family="Helvetica Neue Light", weight="normal", size=30)
         self.titleFont = font.Font(family="Helvetica Neue Light", weight="normal", size=20)
         self.buttonFont = font.Font(family="Helvetica Neue Light", weight="normal", size=18)
@@ -34,16 +38,19 @@ class MainStudentPage(tk.Frame):
         menu3.grid(row=2, column=1)
         menu4 = tk.Button(self, text="Take Probability Test", font=self.buttonFont, padx=4, pady=4, width=20, command=lambda: controller.show_frame(TakeTest2))
         menu4.grid(row=3, column=1)
-        menu5 = tk.Button(self, text="View My Grades", width=20, font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(ViewLesson2))
+        menu5 = tk.Button(self, text="View My Grades", width=20, font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(MyGrades))
         menu5.grid(row=6, column=0, columnspan=2)
         menu6 = tk.Button(self, text="Log Out", font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(StartPage))
         menu6.grid(row=8, column=0, columnspan=2)
         #=====================================
 
         #welcome_message = "Welcome back " + str(StudentLogin.username) + "!"
-        label = tk.Label(self, text="Welcome back [enter user name]!", font=self.headFont, padx=15, pady=5)
+        text = "Welcome back " + str(current_user["username"]) + "!"
+
+        label = tk.Label(self, text=text, font=self.headFont, padx=15, pady=5)
         label2 = tk.Label(self, text="Click on a button below.", font=self.titleFont, padx=5)
         blank_space = tk.Label(self, text="", font=LARGE_FONT)
         label.grid(row=0, columnspan=2)
         label2.grid(row=1, columnspan=2)
         blank_space.grid(row=7)
+

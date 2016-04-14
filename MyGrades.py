@@ -1,6 +1,9 @@
 import tkinter as tk
 LARGE_FONT= ("Verdana", 12)
+import json
 
+with open('current_user.json') as data_file:
+    current_user = json.load(data_file)
 class MyGrades(tk.Frame):
 
     def __init__(self, parent, controller):
@@ -30,6 +33,10 @@ class MyGrades(tk.Frame):
         menu6 = tk.Button(self, text="Log Out", command=lambda: controller.show_frame(StartPage))
         menu6.grid(row=0, column=5)
         #=====================================
+        text = "Welcome back " + str(current_user["username"]) + "!"
+
+        label2 = tk.Label(self, text=text, padx=15, pady=5)
+        label2.grid(row=1)
 
         label = tk.Label(self, text="All test results from user here", font=LARGE_FONT)
-        label.grid(row=1)
+        label.grid(row=2)

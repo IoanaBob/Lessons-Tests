@@ -29,7 +29,7 @@ class StudentLogin(tk.Frame):
         self.e2.grid(row=2, column=1)
         ####################################
         # login button - goes to the lessons
-        log_in_button = tk.Button(self, text="Log in", font=self.buttonFont, padx=4, pady=4, command=lambda: self.login(controller))
+        log_in_button = tk.Button(self, text="Log in", font=self.buttonFont, padx=4, pady=4, command=lambda: self.login(controller, parent))
         log_in_button.grid(row=3, column=1)
 
 
@@ -39,7 +39,7 @@ class StudentLogin(tk.Frame):
 
         button1.grid(row=0, column=0)
 
-    def login(self, controller):
+    def login(self, controller, parent):
         global username
         username = self.e1.get()
         password = self.e2.get()
@@ -53,6 +53,13 @@ class StudentLogin(tk.Frame):
             tm.showerror("Login Error", "Incorrect Username or pass")
             return
         if user_data['Students'][username] == password:
+            # adding current user info
+            data = {"username": username, "student": True}
+            with open('current_user.json', 'w') as json_data:
+                json.dump(data, json_data)
+       
+            # ========================
+            controller.refresh_frame(MainStudentPage)
             controller.show_frame(MainStudentPage)
             return
 

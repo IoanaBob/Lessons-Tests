@@ -16,30 +16,36 @@ from MyGrades import MyGrades
 from TeacherLogin import TeacherLogin
 from TestPage0 import TestPage0
 from TestPage1 import TestPage1
+from TestPage2 import TestPage2
+from TestPage3 import TestPage3
+from TestPage4 import TestPage4
+from TestPage5 import TestPage5
+from TestPage6 import TestPage6
 
 
 LARGE_FONT= ("Verdana", 12)
 
 
 class main(tk.Tk):
-
+ 
     def __init__(self, *args, **kwargs):
 
         tk.Tk.__init__(self, *args, **kwargs)
-        container = tk.Frame(self)
+        self.container = tk.Frame(self)
 
-        container.pack(side="top", fill="both", expand = True)
+        self.container.pack(side="top", fill="both", expand = True)
 
-        container.grid_rowconfigure(0, weight=1)
-        container.grid_columnconfigure(0, weight=1)
+        self.container.grid_rowconfigure(0, weight=1)
+        self.container.grid_columnconfigure(0, weight=1)
 
         self.frames = {}
 
         for F in (StartPage, StudentLogin, TeacherLogin, MainStudentPage, MainTeacherPage, ViewLesson1, ViewLesson2, 
-            EditLesson1, EditLesson2, TakeTest1, TakeTest2, EditTest1, EditTest2, MyGrades, Statistics, TestPage1, TestPage0):
+            EditLesson1, EditLesson2, TakeTest1, TakeTest2, EditTest1, EditTest2, MyGrades, 
+            Statistics, TestPage1, TestPage0, TestPage2, TestPage3, TestPage4, TestPage5, TestPage6):
 
 
-            frame = F(container, self)
+            frame = F(self.container, self)
 
             self.frames[F] = frame
 
@@ -51,6 +57,12 @@ class main(tk.Tk):
     def show_frame(self, cont):
         frame = self.frames[cont]
         frame.tkraise()
+
+    def refresh_frame(self, F):
+        self.frames[F].destroy()
+        frame = F(self.container, self)
+        self.frames[F] = frame
+        frame.grid(column=0, row=0, sticky='nwes')
 
 # running the app
 app = main()

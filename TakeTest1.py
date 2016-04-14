@@ -103,7 +103,14 @@ class TakeTest1(tk.Frame):
         #     text.insert("end", "\n") # to force one checkbox per line
         #
         #
+        def combine_funcs():
+            controller.refresh_frame(TestPage0)
+            controller.show_frame(TestPage0)
 
-        menu6 = tk.Button(self, text="Take Test 1", command=lambda: controller.show_frame(TestPage0))
+        data = {"topic": 1, "score": 0}
+        with open('current_score.json', 'w') as json_data:
+            json.dump(data, json_data)
+
+        menu6 = tk.Button(self, text="Take Test 1", command=lambda: combine_funcs())
         menu6.grid(row=2, column=5)
 

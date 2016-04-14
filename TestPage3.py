@@ -8,10 +8,10 @@ LARGE_FONT= ("Verdana", 12)
 with open('questions.json') as data_file:
     test_data = json.load(data_file)
 
-class TestPage1(tk.Frame):
+class TestPage3(tk.Frame):
 
     def __init__(self, parent, controller):
-        from TestPage2 import TestPage2
+        from TestPage4 import TestPage4
 
         def add_to_score(param):
 
@@ -19,9 +19,8 @@ class TestPage1(tk.Frame):
                 data = json.load(json_data)
             current_score = int(data["score"])
 
-            if var.get() == test_data['Questions'][1]['Question Content'][param]['Correct Answer']:
+            if var.get() == test_data['Questions'][3]['Question Content'][param]['Correct Answer']:
                 current_score += 1
-
 
             data = {"topic": 1, "score": current_score}
             with open('current_score.json', 'w') as json_data:
@@ -30,20 +29,20 @@ class TestPage1(tk.Frame):
 
         def combine_funcs(param):
             add_to_score(param)
-            controller.refresh_frame(TestPage2)
-            controller.show_frame(TestPage2)
+            controller.refresh_frame(TestPage4)
+            controller.show_frame(TestPage4)
 
 
 
         tk.Frame.__init__(self, parent)
 
-        param = randint(0,len(test_data['Questions'][1]['Question Content'])-1)
+        param = randint(0,len(test_data['Questions'][3]['Question Content'])-1)
 
-        question = test_data['Questions'][1]['Question Header'] + test_data['Questions'][1]['Question Content'][param]['Question']
+        question = test_data['Questions'][3]['Question Header'] + test_data['Questions'][3]['Question Content'][param]['Question']
         label = tk.Label(self, text=question, font=LARGE_FONT)
         label.grid(row=1)
 
-        answers = test_data['Questions'][1]['Question Content'][param]['Answers']
+        answers = test_data['Questions'][3]['Question Content'][param]['Answers']
         j = 0
         var = StringVar()
         for answer in set(answers):
