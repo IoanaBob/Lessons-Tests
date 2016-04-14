@@ -40,10 +40,10 @@ class main(tk.Tk):
 
         self.frames = {}
 
+
         for F in (StartPage, StudentLogin, TeacherLogin, MainStudentPage, MainTeacherPage, ViewLesson1, ViewLesson2, 
             EditLesson1, EditLesson2, TakeTest1, TakeTest2, EditTest1, EditTest2, MyGrades, 
             Statistics, TestPage1, TestPage0, TestPage2, TestPage3, TestPage4, TestPage5, TestPage6):
-
 
             frame = F(self.container, self)
 
@@ -56,13 +56,18 @@ class main(tk.Tk):
 
     def show_frame(self, cont):
         frame = self.frames[cont]
+        frame.configure(background='white')
         frame.tkraise()
+
 
     def refresh_frame(self, F):
         self.frames[F].destroy()
         frame = F(self.container, self)
         self.frames[F] = frame
         frame.grid(column=0, row=0, sticky='nwes')
+
+def end_session(root):
+    root.destroy()
 
 # running the app
 app = main()

@@ -31,7 +31,8 @@ class TestPage6(tk.Frame):
             with open('current_score.json', 'w') as json_data:
                 json.dump(data, json_data)
 
-        def add_to_results()
+        def add_to_results():
+            global current_score
 
 
         def combine_funcs(param):

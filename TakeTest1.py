@@ -3,7 +3,7 @@ import json
 from random import randint
 LARGE_FONT= ("Verdana", 12)
 
-with open('questions.json') as data_file:
+with open('questions.json', encoding="utf-8") as data_file:
     test_data = json.load(data_file)
 
 class TakeTest1(tk.Frame):
@@ -113,4 +113,3 @@ class TakeTest1(tk.Frame):
 
         menu6 = tk.Button(self, text="Take Test 1", command=lambda: combine_funcs())
         menu6.grid(row=2, column=5)
-

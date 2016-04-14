@@ -5,7 +5,7 @@ from random import randint
 
 LARGE_FONT= ("Verdana", 12)
 
-with open('questions.json') as data_file:
+with open('questions.json', encoding="utf-8") as data_file:
     test_data = json.load(data_file)
 
 class TestPage1(tk.Frame):

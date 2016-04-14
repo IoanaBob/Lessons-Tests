@@ -4,7 +4,7 @@ from TakeTest1 import TakeTest1
 
 LARGE_FONT= ("Verdana", 12)
 
-with open('lessons.json', 'r') as data_file:
+with open('lessons.json', 'r', encoding="utf-8") as data_file:
     lesson_data = json.load(data_file)
 
 class EditLesson1(tk.Frame):
@@ -64,5 +64,5 @@ class EditLesson1(tk.Frame):
         def save_changes():
             lesson_data['Lessons'][0]['Lesson Content'] = text.get("1.0", 'end-1c')
 
-            with open(u"lessons.json", 'w') as f:
+            with open(u"lessons.json", 'w', encoding="utf-8") as f:
                 f.write(json.dumps(lesson_data))

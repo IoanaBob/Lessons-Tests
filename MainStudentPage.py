@@ -5,6 +5,9 @@ import json
 
 LARGE_FONT= ("Verdana", 12)
 
+def get_user(self, controller):
+    return StudentLogin.username
+
 class MainStudentPage(tk.Frame):
 
     def __init__(self, parent, controller):
@@ -42,15 +45,34 @@ class MainStudentPage(tk.Frame):
         menu5.grid(row=6, column=0, columnspan=2)
         menu6 = tk.Button(self, text="Log Out", font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(StartPage))
         menu6.grid(row=8, column=0, columnspan=2)
+        menu7 = tk.Button(self, text="Get User Name", font=self.buttonFont, padx=4, pady=4, command=lambda: print(get_user(self, controller)))
+        menu7.grid(row=9, column=0, columnspan=2)
         #=====================================
 
         #welcome_message = "Welcome back " + str(StudentLogin.username) + "!"
         text = "Welcome back " + str(current_user["username"]) + "!"
 
         label = tk.Label(self, text=text, font=self.headFont, padx=15, pady=5)
+
+
+        # with open('users.json') as data_file:
+        #     user_data = json.load(data_file)
+        # for user in user_data["Students"]:
+        #     if get_user(self, controller) == user:
+        #         username = user
+
         label2 = tk.Label(self, text="Click on a button below.", font=self.titleFont, padx=5)
-        blank_space = tk.Label(self, text="", font=LARGE_FONT)
+        label2.configure(background = 'white')
+
+        blank_space = tk.Label(self, text="")
+        blank_space.configure(background = 'white')
+        blank_space1 = tk.Label(self, text="")
+        blank_space1.configure(background = 'white')
+        blank_space2 = tk.Label(self, text="")
+        blank_space2.configure(background = 'white')
         label.grid(row=0, columnspan=2)
         label2.grid(row=1, columnspan=2)
         blank_space.grid(row=7)
+        blank_space1.grid(row=9) 
+        blank_space2.grid(row=11)
 
