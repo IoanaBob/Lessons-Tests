@@ -53,13 +53,8 @@ class main(tk.Tk):
 
         for F in (StartPage, StudentLogin, TeacherLogin, MainStudentPage, MainTeacherPage, ViewLesson1, ViewLesson2, 
             EditLesson1, EditLesson2, TakeTest1, TakeTest2, EditTest1, EditTest2, MyGrades, 
-<<<<<<< HEAD
-            Statistics, TestPage1, TestPage0, TestPage2, TestPage3, TestPage4, TestPage5, TestPage6,
-            EditTest1Page0):
-=======
             Statistics, TestPage1, TestPage0, TestPage2, TestPage3, TestPage4, TestPage5, TestPage6,Test2Page0, Test2Page1,Test2Page2,Test2Page3, Test2Page4,
-            Test2Page5,Test2Page6):
->>>>>>> 8e4ed2fb43b1eaa11ac5b00020f6b2e998af5076
+            Test2Page5,Test2Page6,EditTest1Page0):
 
             frame = F(self.container, self)
 
