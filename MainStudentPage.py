@@ -38,7 +38,7 @@ class MainStudentPage(tk.Frame):
         menu3.grid(row=2, column=1)
         menu4 = tk.Button(self, text="Take Probability Test", font=self.buttonFont, padx=4, pady=4, width=20, command=lambda: controller.show_frame(TakeTest2))
         menu4.grid(row=3, column=1)
-        menu5 = tk.Button(self, text="View My Grades", width=20, font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(ViewLesson2))
+        menu5 = tk.Button(self, text="View My Grades", width=20, font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(MyGrades))
         menu5.grid(row=6, column=0, columnspan=2)
         menu6 = tk.Button(self, text="Log Out", font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(StartPage))
         menu6.grid(row=8, column=0, columnspan=2)
