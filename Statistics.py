@@ -91,6 +91,10 @@ class Statistics(tk.Frame):
             else:
                 tm.showerror("Username not found", "Username not found, please try again")
         
+        
+        
+        
+    
 #        # moved all the other page imports, makes it more clear and it works in any case.
 #        # add more here, too, if you need to.
 #        from EditLesson1 import EditLesson1
@@ -103,7 +107,7 @@ class Statistics(tk.Frame):
  #       from StartPage import StartPage
   #      #=====================================
   ##      # MENU STARTS HERE
-  #      # TODO: make buttons stay one near each other (not depending on the other columns)
+  #      TODO: make buttons stay one near each other (not depending on the other columns)
   #      menu1 = tk.Button(self, text="Edit Lesson 1", command=lambda: controller.show_frame(EditLesson1))
   #      menu1.grid(row=0, column=0)
   #      menu2 = tk.Button(self, text="Edit Lesson 2", command=lambda: controller.show_frame(EditLesson2))
