@@ -58,8 +58,8 @@ class ViewLesson1(tk.Frame):
         # text.insert(tk.END," Morbi ac interdum odio. In nec turpis nisi. Vivamus efficitur sapien eu libero feugiat aliquam. Nunc eget justo vitae dolor egestas placerat sed id sem. Sed mollis felis non tortor accumsan, sit amet consectetur diam tristique. Pellentesque auctor est in lacus feugiat porttitor. Duis sit amet est quam. Proin tristique eu lacus eu vehicula.")
         # text.insert(tk.END, "Fusce eget rhoncus justo. Pellentesque ut ipsum ac massa porta venenatis at malesuada orci. Suspendisse sollicitudin mollis aliquam. Sed nunc ligula, aliquet id massa et, tincidunt interdum lacus. Quisque at sodales eros, quis scelerisque nisl. Integer a justo nec justo ullamcorper tincidunt. Mauris eu enim aliquam sapien mollis vestibulum in at massa.")
         text.config(state=tk.DISABLED)
-        text.grid(row=2, columnspan=6)
+        text.grid(row=2, columnspan=7)
 
         # Go to take test
         button1 = tk.Button(self, text="Continue and take test on probability", font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(TakeTest1))
-        button1.grid(row=3, columnspan=6)
+        button1.grid(row=3, columnspan=7)
