@@ -1,3 +1,11 @@
+
+
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Apr 14 11:58:41 2016
+
+@author: c1546761
+"""
 import ast
 import json
 import matplotlib.pyplot as plt
@@ -54,12 +62,14 @@ def test2results(username, jsonfile):
     return test2data
 
 def bothresults(username,jsonfile):
-    
+    #test1results(username, jsonfile)
     if test1results(username, jsonfile)==0:
         print("User not found")        
         return 0
     else:
         test2results(username, jsonfile)
+ 
+
 bothresults(username,json_decode) 
   
 #test1results(username,json_decode)
