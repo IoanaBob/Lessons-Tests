@@ -1,11 +1,90 @@
 import tkinter as tk
+from MainStudentPage import *
+import tkinter.messagebox as tm
+import ast
+import json
+import matplotlib.pyplot as plt
+
+
 LARGE_FONT= ("Verdana", 12)
 
 class Statistics(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
+        
+        self.headFont = font.Font(family="Helvetica Neue Light", weight="normal", size=30)
+        self.titleFont = font.Font(family="Helvetica Neue Light", weight="normal", size=20)
+        self.buttonFont = font.Font(family="Helvetica Neue Light", weight="normal", size=18)        
+        label = tk.Label(self, text="Search for Username", font=self.headFont, padx=10, pady=10)
+        label.grid(row=0, column=1)
+        self.username = tk.Label(self, text="Username:", font=self.titleFont).grid(row=1, sticky="E")
+        
+        self.e1 = tk.Entry(self)
+        
+        self.e1.grid(row=1, column=1)
+        
+        enter_username_button = tk.Button(self, text="Enter", font=self.buttonFont, padx=4, pady=4, command=lambda: self.stats(username))
+        enter_username_button.grid(row=3, column=1)
+        
+    def stats(self, username):
+        global username
+        username = self.e1.get()
 
+        with open('results.json') as data:
+            json_decode = json.load(data)
+        
+        def test1results(username, jsonfile):
+            test1data = json_decode['username']['test1']
+            test1data = ast.literal_eval(test1data)
+            averagescore= sum(test1data)/len(test1data)
+            topscore = max(test1data)
+            print("\nScores for Test 1:", test1data)    
+            print("\nAverage Score for Test 1:",averagescore)
+            print("\nTop Score for Test 1:",topscore)  
+            amountattempts = list(range(0,len(test1data)))    
+            plt.plot(amountattempts, test1data, 'ro')
+            plt.ylabel("Score")
+            plt.xlabel("Attempts")
+            plt.axis([-1,len(amountattempts)+1,0,10])
+            plt.show()
+            return test1data
+        
+        def test2results(username, jsonfile):
+            test2data = json_decode['username']['test2']
+            test2data = ast.literal_eval(test2data)
+            averagescore= sum(test2data)/len(test2data)
+            topscore = max(test2data)
+            print("\nScores for Test 2:", test2data)    
+            print("\nAverage Score for Test 2:",averagescore)
+            print("\nTop Score for Test 2:",topscore)
+            amountattempts = list(range(0,len(test2data)))    
+            plt.plot(amountattempts, test2data, 'ro')
+            plt.ylabel("Score")
+            plt.xlabel("Attempts")
+            plt.axis([-1,len(amountattempts)+1,0,10])
+            plt.show()
+            return test2data
+            
+        def bothresults(username, jsonfile):
+            test1results(username, jsonfile)
+            test2results(username, jsonfile)
+            
+        for test1 in json_decode:
+            if test1 == username:
+                bothresults(username,json_decode)
+            else:
+                tm.showerror("Username not found")
+        
+        
+        
+        text = tk.Text(self)
+        text.insert(tk.INSERT, bothresults(username, json_decode))
+        
+        text.config(state=tk.DISABLED)
+        text.grid(row=2)
+        
+        
         # moved all the other page imports, makes it more clear and it works in any case.
         # add more here, too, if you need to.
         from EditLesson1 import EditLesson1
