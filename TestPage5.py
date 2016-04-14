@@ -47,14 +47,16 @@ class TestPage5(tk.Frame):
         question = test_data['Questions'][5]['Question Header'] + test_data['Questions'][5]['Question Content'][param]['Question']
         label = tk.Label(self, text=question, font=self.titleFont, padx=4, pady=4)
         label.grid(row=1, sticky="W", columnspan=20)
+        label.configure(background = 'white')
 
         answers = test_data['Questions'][5]['Question Content'][param]['Answers']
         j = 0
         var = StringVar()
         for answer in set(answers):
-            radio = tk.Radiobutton(self, text=answer, variable=var, value=answer)
+            radio = tk.Radiobutton(self, text=answer, font=self.textFont, relief = tk.SUNKEN, borderwidth = 4, width = 5, padx=4, pady=4, variable=var, value=answer)
             radio.grid(row=2, column=j)
             j += 1
 
-        next = tk.Button(self, text="Next question", padx=4, pady=4, font=self.buttonFont, command=lambda:combine_funcs(param))
-        next.grid(row=3, column=0, sticky="W", columnspan=20)
+        next = tk.Button(self, text="Next question", font=self.buttonFont, borderwidth = 4, padx=4, pady=4, command=lambda:combine_funcs(param))
+        next.grid(row=3, column=0, columnspan=20, sticky="W")
+        next.configure(background = '#FF8800')
