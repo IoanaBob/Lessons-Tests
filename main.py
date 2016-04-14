@@ -23,6 +23,9 @@ from TestPage5 import TestPage5
 from TestPage6 import TestPage6
 
 
+from EditTest1Page0 import EditTest1Page0
+
+
 LARGE_FONT= ("Verdana", 12)
 
 
@@ -43,7 +46,8 @@ class main(tk.Tk):
 
         for F in (StartPage, StudentLogin, TeacherLogin, MainStudentPage, MainTeacherPage, ViewLesson1, ViewLesson2, 
             EditLesson1, EditLesson2, TakeTest1, TakeTest2, EditTest1, EditTest2, MyGrades, 
-            Statistics, TestPage1, TestPage0, TestPage2, TestPage3, TestPage4, TestPage5, TestPage6):
+            Statistics, TestPage1, TestPage0, TestPage2, TestPage3, TestPage4, TestPage5, TestPage6,
+            EditTest1Page0):
 
             frame = F(self.container, self)
 

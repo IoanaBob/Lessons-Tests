@@ -44,11 +44,6 @@ class EditLesson1(tk.Frame):
         text = tk.Text(self)
         text.insert(tk.INSERT, lesson_data['Lessons'][0]['Lesson Content'])
         text.grid(row=2)
-        # =================================
-        # TODO - when modified, the new text in the textbox is saved in te JSON
-        # A SAVE BUTTON IS NEEDED HERE
-        # =================================
-
 
         save_button = tk.Button(self, text="Save Changes", command=lambda: save_changes() )
         save_button.grid(row=1)
