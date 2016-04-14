@@ -56,7 +56,7 @@ class EditLesson1(tk.Frame):
         menu7.configure(background = '#FF8800')
         #=====================================
 
-        label = tk.Label(self, text=lesson_data['Lessons'][0]['Lesson Title'], font=LARGE_FONT)
+        label = tk.Label(self, text=lesson_data['Lessons'][0]['Lesson Title'], font=self.headFont)
         label.grid(row=1)
         label.configure( background = 'white')
 
@@ -69,7 +69,7 @@ class EditLesson1(tk.Frame):
 
 
         # Edit Test
-        button1 = tk.Button(self, text="Edit test", font=self.buttonFont, padx=4, pady=4, borderwidth = 4, command=lambda: controller.show_frame(EditTest1))
+        button1 = tk.Button(self, text="Edit Test", font=self.buttonFont, padx=4, pady=4, borderwidth = 4, command=lambda: controller.show_frame(EditTest1))
         button1.grid(row=4, column=1)
         button1.configure(background = '#FF8800')
 
