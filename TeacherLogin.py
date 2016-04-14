@@ -18,7 +18,7 @@ class TeacherLogin(tk.Frame):
         # other pages imports
         from StartPage import StartPage
 
-                label = tk.Label(self, text="Log In", font=self.headFont)
+        label = tk.Label(self, text="Log In", font=self.headFont)
         label.grid(row=0, column=1)
         label.configure(background = 'white')
 
@@ -37,13 +37,11 @@ class TeacherLogin(tk.Frame):
         self.e2.grid(row=2, column=1)
         ####################################
         # login button - goes to the lessons
-        log_in_button = tk.Button(self, text="Log in", borderwidth = 4, font=self.buttonFont, padx=4, pady=4, command=lambda: self.login(controller, parent))
+        log_in_button = tk.Button(self, text="Log in", font=self.buttonFont, padx=4, pady=4, command=lambda: self.login(controller))
         log_in_button.grid(row=3, column=1)
         log_in_button.configure(background = '#FF8800')
 
         button1 = tk.Button(self, text="Back to Home",relief = tk.RIDGE, borderwidth = 4, font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(StartPage))
-
-        button1.grid(row=0, column=0)
 
         button1.grid(row=0, column=0)
 
@@ -52,7 +50,7 @@ class TeacherLogin(tk.Frame):
         username = self.e1.get()
         password = self.e2.get()
 
-        with open('users.json', encoding="utf-8") as data_file:
+        with open('users.json', encoding="utf8") as data_file:
             user_data = json.load(data_file)
         try:
             user_data['Teachers'][username]
