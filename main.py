@@ -50,6 +50,7 @@ class main(tk.Tk):
 
     def show_frame(self, cont):
         frame = self.frames[cont]
+        frame.configure(background='white')
         frame.tkraise()
 
 def end_session(root):

@@ -56,10 +56,19 @@ class MainStudentPage(tk.Frame):
 
 
 
-        welcome_message = "Welcome back " + str(username) + "!"
-        label = tk.Label(self, text=welcome_message, font=self.headFont, padx=15, pady=5)
+        label = tk.Label(self, text="Welcome back [enter user name]!", font=self.headFont, padx=15, pady=5)
+        label.configure(background = 'white')
         label2 = tk.Label(self, text="Click on a button below.", font=self.titleFont, padx=5)
-        blank_space = tk.Label(self, text="", font=LARGE_FONT)
+        label2.configure(background = 'white')
+
+        blank_space = tk.Label(self, text="")
+        blank_space.configure(background = 'white')
+        blank_space1 = tk.Label(self, text="")
+        blank_space1.configure(background = 'white')
+        blank_space2 = tk.Label(self, text="")
+        blank_space2.configure(background = 'white')
         label.grid(row=0, columnspan=2)
         label2.grid(row=1, columnspan=2)
         blank_space.grid(row=7)
+        blank_space1.grid(row=9) 
+        blank_space2.grid(row=11)
