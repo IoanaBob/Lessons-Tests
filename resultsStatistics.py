@@ -7,7 +7,6 @@ with open('results.json', 'r') as data:
     json_decode = json.load(data)
 
 username = (input("input name:"))
-
 def test1results(username, jsonfile):
        
     for test1 in jsonfile:
@@ -20,7 +19,12 @@ def test1results(username, jsonfile):
     print("\nScores for Test 1:", test1data)    
     print("\nAverage Score for Test 1:",averagescore)
     print("\nTop Score for Test 1:",topscore)  
-    
+    amountattempts = list(range(0,len(test1data)))    
+    plt.plot(amountattempts, test1data, 'ro')
+    plt.ylabel("Score")
+    plt.xlabel("Attempts")
+    plt.axis([-1,len(test1data)+1,0,10])
+    plt.show()
     return test1data
     
 def test2results(username, jsonfile):
@@ -35,11 +39,16 @@ def test2results(username, jsonfile):
     print("\nScores for Test 2:", test2data)    
     print("\nAverage Score for Test 2:",averagescore)
     print("\nTop Score for Test 2:",topscore)
-    
+    amountattempts = list(range(0,len(test2data)))    
+    plt.plot(amountattempts, test2data, 'ro')
+    plt.ylabel("Score")
+    plt.xlabel("Attempts")
+    plt.axis([-1,len(test2data)+1,0,10])
+    plt.show()
     return test2data
 
 
-    
+        
 test1results(username,json_decode)
 test2results(username,json_decode)
 
