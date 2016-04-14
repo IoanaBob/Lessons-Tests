@@ -53,7 +53,7 @@ class ViewLesson1(tk.Frame):
         menu6.grid(row=0, column=6)
         menu6.configure(background = '#FF8800')
         menu7 = tk.Button(self, text="Log Out", padx=4, pady=4, font=self.buttonFont,  relief=tk.RIDGE, command=lambda: controller.show_frame(StartPage))
-        menu7.grid(row=0, column=6)
+        menu7.grid(row=0, column=7)
         menu7.configure(background = '#FF8800')
 
         label = tk.Label(self, text=lesson_data['Lessons'][0]['Lesson Title'], font=self.headFont)
