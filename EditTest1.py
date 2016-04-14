@@ -15,7 +15,7 @@ class EditTest1(tk.Frame):
         from Statistics import Statistics
         from StartPage import StartPage
         #=====================================
-        from EditTest1Page0 import EditTest1Page0
+        from EditTest1page0 import EditTest1Page0
         #=====================================
         # MENU STARTS HERE
         # TODO: make buttons stay one near each other (not depending on the other columns)
