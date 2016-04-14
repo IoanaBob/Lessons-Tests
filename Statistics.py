@@ -80,7 +80,7 @@ class Statistics(tk.Frame):
         
         
         text = tk.Text(self)
-        text.insert(tk.INSERT, bothresults(username, json_decode))
+        text.insert(tk.INSERT, bothresults(username_stats, json_decode))
         
         text.config(state=tk.DISABLED)
         text.grid(row=2)
