@@ -6,6 +6,7 @@ import json
 import matplotlib.pyplot as plt
 
 
+
 LARGE_FONT= ("Verdana", 12)
 
 class Statistics(tk.Frame):
@@ -18,23 +19,23 @@ class Statistics(tk.Frame):
         self.buttonFont = font.Font(family="Helvetica Neue Light", weight="normal", size=18)        
         label = tk.Label(self, text="Search for Username", font=self.headFont, padx=10, pady=10)
         label.grid(row=0, column=1)
-        self.username = tk.Label(self, text="Username:", font=self.titleFont).grid(row=1, sticky="E")
+        self.username_stats = tk.Label(self, text="Username:", font=self.titleFont).grid(row=1, sticky="E")
         
         self.e1 = tk.Entry(self)
         
         self.e1.grid(row=1, column=1)
         
-        enter_username_button = tk.Button(self, text="Enter", font=self.buttonFont, padx=4, pady=4, command=lambda: self.stats(username))
+        enter_username_button = tk.Button(self, text="Enter", font=self.buttonFont, padx=4, pady=4, command=lambda: self.stats(username_stats))
         enter_username_button.grid(row=3, column=1)
         
     def stats(self, username):
-        global username
-        username = self.e1.get()
+        
+        username_stats = self.e1.get()
 
         with open('results.json') as data:
             json_decode = json.load(data)
         
-        def test1results(username, jsonfile):
+        def test1results(username_stats, jsonfile):
             test1data = json_decode['username']['test1']
             test1data = ast.literal_eval(test1data)
             averagescore= sum(test1data)/len(test1data)
@@ -50,7 +51,7 @@ class Statistics(tk.Frame):
             plt.show()
             return test1data
         
-        def test2results(username, jsonfile):
+        def test2results(username_stats, jsonfile):
             test2data = json_decode['username']['test2']
             test2data = ast.literal_eval(test2data)
             averagescore= sum(test2data)/len(test2data)
@@ -66,13 +67,13 @@ class Statistics(tk.Frame):
             plt.show()
             return test2data
             
-        def bothresults(username, jsonfile):
-            test1results(username, jsonfile)
-            test2results(username, jsonfile)
+        def bothresults(username_stats, jsonfile):
+            test1results(username_stats, jsonfile)
+            test2results(username_stats, jsonfile)
             
         for test1 in json_decode:
-            if test1 == username:
-                bothresults(username,json_decode)
+            if test1 == username_stats:
+                bothresults(username_stats,json_decode)
             else:
                 tm.showerror("Username not found")
         
@@ -83,7 +84,6 @@ class Statistics(tk.Frame):
         
         text.config(state=tk.DISABLED)
         text.grid(row=2)
-        
         
         # moved all the other page imports, makes it more clear and it works in any case.
         # add more here, too, if you need to.
