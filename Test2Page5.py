@@ -53,7 +53,7 @@ class Test2Page5(tk.Frame):
         j = 0
         var = StringVar()
         for answer in set(answers):
-            radio = tk.Radiobutton(self, text=answer, font=self.textFont, relief = tk.SUNKEN, borderwidth = 4, width = 8, padx=4, pady=4, variable=var, value=answer)
+            radio = tk.Radiobutton(self, text=answer, font=self.textFont, relief = tk.SUNKEN, borderwidth = 4,  padx=4, pady=4, variable=var, value=answer)
             radio.grid(row=2, column=j)
             j += 1
 
