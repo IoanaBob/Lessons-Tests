@@ -1,10 +1,12 @@
 import tkinter as tk
 import StudentLogin
 from tkinter import font
+import json
 
 LARGE_FONT= ("Verdana", 12)
-def print_user(self, controller):
-    print(StudentLogin.username)
+
+def get_user(self, controller):
+    return StudentLogin.username
 
 class MainStudentPage(tk.Frame):
 
@@ -40,11 +42,21 @@ class MainStudentPage(tk.Frame):
         menu5.grid(row=6, column=0, columnspan=2)
         menu6 = tk.Button(self, text="Log Out", font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(StartPage))
         menu6.grid(row=8, column=0, columnspan=2)
-        menu6 = tk.Button(self, text="Get User Name", font=self.buttonFont, padx=4, pady=4, command=lambda: print_user(self, controller))
-        menu6.grid(row=9, column=0, columnspan=2)
+        menu7 = tk.Button(self, text="Get User Name", font=self.buttonFont, padx=4, pady=4, command=lambda: print(get_user(self, controller)))
+        menu7.grid(row=9, column=0, columnspan=2)
         #=====================================
 
-        welcome_message = "Welcome back " + str(StudentLogin.username) + "!"
+        username = ""
+
+        with open('users.json') as data_file:
+            user_data = json.load(data_file)
+        for user in user_data["Students"]:
+            if get_user(self, controller) == user:
+                username = user
+
+
+
+        welcome_message = "Welcome back " + str(username) + "!"
         label = tk.Label(self, text=welcome_message, font=self.headFont, padx=15, pady=5)
         label2 = tk.Label(self, text="Click on a button below.", font=self.titleFont, padx=5)
         blank_space = tk.Label(self, text="", font=LARGE_FONT)
