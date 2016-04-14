@@ -26,9 +26,9 @@ class MainStudentPage(tk.Frame):
         self.titleFont = font.Font(family="Helvetica Neue Light", weight="normal", size=20)
         self.buttonFont = font.Font(family="Helvetica Neue Light", weight="normal", size=18)
 
-        menu1 = tk.Button(self, text="Take Sets Lesson", width=20, font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(ViewLesson1))
+        menu1 = tk.Button(self, text="Take Sets Lesson", width=20, font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(ViewLesson2))
         menu1.grid(row=2, column=0)
-        menu2 = tk.Button(self, text="Take Probability Lesson", width=20, font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(ViewLesson2))
+        menu2 = tk.Button(self, text="Take Probability Lesson", width=20, font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(ViewLesson1))
         menu2.grid(row=3, column=0)
         menu3 = tk.Button(self, text="Take Sets Test", width=20, font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(TakeTest1))
         menu3.grid(row=2, column=1)

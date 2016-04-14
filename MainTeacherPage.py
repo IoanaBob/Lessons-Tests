@@ -45,7 +45,3 @@ class MainTeacherPage(tk.Frame):
 
         blank_space = tk.Label(self, text="")
         blank_space.grid(row=4, column=0, columnspan=2)
-
-        # back to home button - will be deleted when menu will exist - also you cant go back if logged in       button3 = tk.Button(self, text="Back to Home", command=lambda: controller.show_frame(StartPage))
-        button3 = tk.Button(self, text="Back to Home", font=self.buttonFont, padx=4, pady=4, width=17, command=lambda: controller.show_frame(StartPage))
-        button3.grid(row=5, column=1)
