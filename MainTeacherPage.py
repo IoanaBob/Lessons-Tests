@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import font
+import json
 
 LARGE_FONT= ("Verdana", 12)
 
@@ -45,7 +46,11 @@ class MainTeacherPage(tk.Frame):
         menu6.grid(row=8, column=0, columnspan=3)
         #=====================================
 
-        label = tk.Label(self, text="Welcome back.", font=self.headFont)
+        with open('current_user.json') as data_file:
+            current_user = json.load(data_file)
+        text = "Welcome back, " + str(current_user["username"]) + "!"
+
+        label = tk.Label(self, text=text, font=self.headFont)
         label.grid(row=0, column=0, columnspan=2)
         label.configure(background = 'white')
 

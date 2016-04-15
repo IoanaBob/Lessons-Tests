@@ -71,6 +71,7 @@ class TeacherLogin(tk.Frame):
                 json.dump(data, json_data)
        
             # ========================
+            controller.refresh_frame(MainTeacherPage)
             controller.show_frame(MainTeacherPage)
             return
         else:
