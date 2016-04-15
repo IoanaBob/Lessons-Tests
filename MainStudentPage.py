@@ -51,9 +51,6 @@ class MainStudentPage(tk.Frame):
         menu6 = tk.Button(self, text="Log Out", font=self.buttonFont, borderwidth = 4, padx=4, pady=4, command=lambda: controller.show_frame(StartPage))
         menu6.grid(row=10, column=0, columnspan=3)
         menu6.configure(background = '#FF8800')
-        menu7 = tk.Button(self, text="Get User Name", font=self.buttonFont, borderwidth = 4, padx=4, pady=4, command=lambda: print(get_user(self, controller)))
-        menu7.grid(row=8, column=0, columnspan=3)
-        menu7.configure(background = '#FF8800')
         #=====================================
 
         text = "Welcome back " + str(current_user["username"]) + "!"
