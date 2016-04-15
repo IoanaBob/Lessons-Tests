@@ -80,9 +80,9 @@ class EditTest1Page5(tk.Frame):
 
         text = tk.Text(self)
         text.insert(tk.INSERT, questions["Questions"][5])
-        text.grid(row=3)
+        text.grid(row=3, column=0, columnspan=10, sticky="W")
 
-        save_button = tk.Button(self, text="Save Changes", command=lambda: save_changes() )
+        save_button = tk.Button(self, text="Save Changes", font=self.buttonFont, padx=4, pady=4, command=lambda: save_changes() )
         save_button.grid(row=4)
 
 
