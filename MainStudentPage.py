@@ -29,20 +29,37 @@ class MainStudentPage(tk.Frame):
         with open('current_user.json') as data_file:
             current_user = json.load(data_file)
 
+        def combine_lesson1():
+            controller.refresh_frame(ViewLesson1)
+            controller.show_frame(ViewLesson1)
+
+        def combine_lesson2():
+            controller.refresh_frame(ViewLesson2)
+            controller.show_frame(ViewLesson2)
+
+        def combine_test1():
+            controller.refresh_frame(TakeTest1)
+            controller.show_frame(TakeTest1)
+
+        def combine_test2():
+            controller.refresh_frame(TakeTest2)
+            controller.show_frame(TakeTest2)
+
+
         self.headFont = font.Font(family="Helvetica Neue Light", weight="normal", size=30)
         self.titleFont = font.Font(family="Helvetica Neue Light", weight="normal", size=20)
         self.buttonFont = font.Font(family="Helvetica Neue Light", weight="normal", size=18)
 
-        menu1 = tk.Button(self, text="Take Sets Lesson", borderwidth = 4, width=20, font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(ViewLesson2))
+        menu1 = tk.Button(self, text="Take Sets Lesson", borderwidth = 4, width=20, font=self.buttonFont, padx=4, pady=4, command=lambda: combine_lesson2())
         menu1.grid(row=2, column=0)
         menu1.configure(background = '#FF8800')
-        menu2 = tk.Button(self, text="Take Probability Lesson", borderwidth = 4, width=20, font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(ViewLesson1))
+        menu2 = tk.Button(self, text="Take Probability Lesson", borderwidth = 4, width=20, font=self.buttonFont, padx=4, pady=4, command=lambda: combine_lesson1())
         menu2.grid(row=4, column=0)
         menu2.configure(background = '#FF8800')
-        menu3 = tk.Button(self, text="Take Sets Test", borderwidth = 4, width=20, font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(TakeTest2))
+        menu3 = tk.Button(self, text="Take Sets Test", borderwidth = 4, width=20, font=self.buttonFont, padx=4, pady=4, command=lambda: combine_test2())
         menu3.grid(row=2, column=2)
         menu3.configure(background = '#FF8800')
-        menu4 = tk.Button(self, text="Take Probability Test", borderwidth = 4, font=self.buttonFont, padx=4, pady=4, width=20, command=lambda: controller.show_frame(TakeTest1))
+        menu4 = tk.Button(self, text="Take Probability Test", borderwidth = 4, font=self.buttonFont, padx=4, pady=4, width=20, command=lambda: combine_test1())
         menu4.grid(row=4, column=2)
         menu4.configure(background = '#FF8800')
         menu5 = tk.Button(self, text="View My Grades", borderwidth = 4, width=20, font=self.buttonFont, padx=4, pady=4, command=lambda: controller.show_frame(MyGrades))
