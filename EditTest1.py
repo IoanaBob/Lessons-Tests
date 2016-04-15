@@ -15,6 +15,7 @@ class EditTest1(tk.Frame):
         from EditTest2 import EditTest2
         from Statistics import Statistics
         from StartPage import StartPage
+        from MainTeacherPage import MainTeacherPage
         #=====================================
         from EditTest1Page0 import EditTest1Page0
         #=====================================
