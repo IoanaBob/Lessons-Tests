@@ -2,6 +2,7 @@ import tkinter as tk
 from StudentLogin import StudentLogin
 from TeacherLogin import TeacherLogin
 from tkinter import font
+import json
 
 LARGE_FONT= ("Verdana", 12)
 
@@ -24,3 +25,7 @@ class StartPage(tk.Frame):
         button2 = tk.Button(self, text="I am a Professor", font=self.titleFont, padx=5, pady=5, command=lambda: controller.show_frame(TeacherLogin))
         button2.configure(background = '#FF8800')
         button2.pack()
+
+        data = {"username": None, "student": None}
+        with open('current_user.json', 'w') as json_data:
+            json.dump(data, json_data)
