@@ -46,9 +46,9 @@ class Test2Page6(tk.Frame):
             with open('results.json', 'r') as json_data:
                 results = json.load(json_data)
             if current_user in results:
-                results[current_user]["1"].append(current_score)
+                results[current_user]["2"].append(current_score)
             else:
-                results[current_user] = {"1":[current_score],"2":[]}
+                results[current_user] = {"1":[],"2":[current_score]}
 
             with open('results.json', 'w') as json_data:
                 json.dump(results, json_data)
