@@ -65,6 +65,13 @@ class TeacherLogin(tk.Frame):
             return
 
         if user_data['Teachers'][username] == password:
+            # adding current user info
+            data = {"username": username, "student": False}
+            with open('current_user.json', 'w') as json_data:
+                json.dump(data, json_data)
+       
+            # ========================
+            controller.refresh_frame(MainTeacherPage)
             controller.show_frame(MainTeacherPage)
             return
         else:
