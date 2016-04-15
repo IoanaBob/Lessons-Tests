@@ -29,8 +29,14 @@ from Test2Page4 import Test2Page4
 from Test2Page5 import Test2Page5
 from Test2Page6 import Test2Page6
 
-from EditTest1page0 import EditTest1Page0
 
+from EditTest1Page0 import EditTest1Page0
+from EditTest1Page1 import EditTest1Page1
+from EditTest1Page2 import EditTest1Page2
+from EditTest1Page3 import EditTest1Page3
+from EditTest1Page4 import EditTest1Page4
+from EditTest1Page5 import EditTest1Page5
+from EditTest1Page6 import EditTest1Page6
 
 LARGE_FONT= ("Verdana", 12)
 
@@ -53,7 +59,8 @@ class main(tk.Tk):
         for F in (StartPage, StudentLogin, TeacherLogin, MainStudentPage, MainTeacherPage, ViewLesson1, ViewLesson2,
             EditLesson1, EditLesson2, TakeTest1, TakeTest2, EditTest1, EditTest2, MyGrades,
             Statistics, TestPage1, TestPage0, TestPage2, TestPage3, TestPage4, TestPage5, TestPage6,Test2Page0, Test2Page1,Test2Page2,Test2Page3, Test2Page4,
-            Test2Page5,Test2Page6,EditTest1Page0):
+            Test2Page5,Test2Page6, EditTest1Page0, EditTest1Page2, EditTest1Page3, EditTest1Page4,
+            EditTest1Page5, EditTest1Page6, EditTest1Page1):
 
             frame = F(self.container, self)
 
